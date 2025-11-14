@@ -15,22 +15,26 @@ body{
 
 .nav-container {
     display: flex;
-    height: 142px;
+    height: 120px;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
     align-self: stretch;
-    margin: 30px 80px 30px 80px;
+    margin: 10px 80px 10px 80px;
     
 }
 
 .logo-name{
     font-family: "Herr Von Muellerhoff", serif;
-    font-size: 48px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     width: 297px;
+    height: 70px;
+}
+
+.menu-container{
     height: 70px;
 }
 
@@ -39,14 +43,14 @@ body{
     padding: 0 430px 0 80px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 33px;
+    gap: 10px;
     align-self: stretch;
 }
 
 .main-intro{
     color: #000;
     font-family: Moulpali, sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 48px */
@@ -57,11 +61,12 @@ body{
 .secondary-intro{
     color: #000;
     font-family: Moulpali, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 36px */
     align-self: stretch;
+    margin-top: 10px;
 }
 
 .project-one-container{
@@ -77,17 +82,17 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 35px;
+    gap: 20px;
     flex: 1 0 0;
     margin-right: auto;
-    margin-top: 150px;
+    margin-top: -230px;
     
 }
 
 .project-one-name{
     color: #000;
     font-family: Raleway, sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 36px */
@@ -97,7 +102,7 @@ body{
 .project-one-content{
     color: #000;
     font-family: Raleway, sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 36px */
@@ -105,7 +110,7 @@ body{
 
 .button-container{
     display: flex;
-    width: 160px;
+    width: auto;
     height: 36px;
     justify-content: center;
     align-items: center;
@@ -114,7 +119,7 @@ body{
 .button-text{
     color: #000;
     font-family: Raleway, sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 36px */
@@ -124,21 +129,21 @@ body{
     width: 767px;
     height: 858px;
     display: flex;
-    margin-right: -80px;
+    margin-right: -200px;
    
 
 }
 
 .phone-intuitive{
-    width: 420.214px;
-    height: 805px;
+    width: 320.214px;
+    height: 605px;
     flex-shrink: 0; 
-    margin-top:100px;
-    margin-right: -95px;
+    margin-top:75px;
+    margin-right: -55px;
 }
 
 .phone-homepage{
-    width: 441px;
-    height: 816px;
+    width: 341px;
+    height: 616px;
     flex-shrink: 0;
 }
