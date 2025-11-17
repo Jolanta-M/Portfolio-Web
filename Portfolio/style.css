@@ -12,6 +12,13 @@ body{
     overflow-x: hidden;
 }
 
+.wrapper{
+     position: relative;
+    width: auto;
+    min-height: 100vh;
+    margin: auto;
+}
+
 
 .nav-container {
     display: flex;
@@ -85,9 +92,12 @@ body{
     gap: 20px;
     flex: 1 0 0;
     margin-right: auto;
-    margin-top: -230px;
+    margin-top: 20px;
+    height: 502px;
     
 }
+
+
 
 .project-one-name{
     color: #000;
@@ -110,10 +120,11 @@ body{
 
 .button-container{
     display: flex;
-    width: auto;
+    width: 160px;
     height: 36px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .button-text{
@@ -125,25 +136,80 @@ body{
     line-height: 150%; /* 36px */
 }
 
-.phones-container{
-    width: 767px;
-    height: 858px;
+
+.phones{
+    width: 695px;
+    height: 770px;
     display: flex;
-    margin-right: -200px;
-   
-
+    margin-right: -80px;
 }
 
-.phone-intuitive{
-    width: 320.214px;
-    height: 605px;
-    flex-shrink: 0; 
-    margin-top:75px;
-    margin-right: -55px;
+.project2-container{
+    display: flex;
+    padding: 80px;
+    gap: 80px;
+    margin-top: -180px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    
 }
 
-.phone-homepage{
-    width: 341px;
-    height: 616px;
+.project2-demo{
+    width: 420px;
+    height: 705px;
+    display: flex;
+    margin-right: -80px;
+    
+}
+
+
+.project2-description-container{
+    display: flex;
+    height: auto;
+    padding-right: 35px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1 0 0;
+    margin-top: -270px;
+}
+
+.project2-name{
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
+}
+
+.project2-content{
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 36px */
+    align-self: stretch;
+}
+
+.button2-container{
+    display: flex;
+    width: 160px;
+    height: 36px;
+    justify-content: space-between;
+    align-items: center;
     flex-shrink: 0;
 }
+
+.button2-text{
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
+
+
