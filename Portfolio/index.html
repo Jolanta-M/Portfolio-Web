@@ -7,8 +7,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Moulpali&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/JM.JPG">
     <link rel="stylesheet" href="style.css">
+
+     <style>
+    #viewport {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #333;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+    #breakpoint {
+      position: fixed;
+      bottom: 40px;
+      right: 10px;
+      background: #0066cc;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
     <!--Wrapper-->
@@ -43,16 +71,18 @@
 <!--Project 1-->
 <div class="project-one-container">
     <div class="description-container">
-<h2 class="project-one-name">Project 1: Investigating solutions for enhancement of usefulness in 
+<h2 class="project-one-name">Project 1: Final University Project <br> Investigating solutions for enhancement of usefulness in 
     personal decision support software</h2>
-    <p class="project-one-content">Lorem ipsum dolor sit amet, consectetur adipiscing 
-        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p class="project-one-content">This project is using the research from psychology about the rational
+         and intuitive thinking styles and their role in human decision making. Based on this research it
+          was attempted to create additional functionality for the mobile decision applications so that 
+          users could get more value out of them. The new software solution was evaluated using within-subjects
+           experimental design and UMUX questionnaire. </p>
 
          <div class="button-container">
-    <button class="button-text">Learn More >></button>
+    <button class="button-text" onclick="window.location.href='decideApp.html'">
+  Learn More >>
+</button>
     </div>
     </div>
 <!--Phones container-->
@@ -81,14 +111,17 @@
     aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
     voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
-    <div class="button2-container">
-    <button class="button2-text">Learn More >></button>
+    <div class="button-container">
+    <button class="button-text">Learn More >></button>
 </div>
 </div>
 
 </div>
 <!--End of Project 2-->
 
+<!-- Elements your script updates -->
+  <div id="viewport"></div>
+  <div id="breakpoint"></div>
 
     </div>
     <!--End of Wrapper-->

@@ -12,45 +12,59 @@ body{
     overflow-x: hidden;
 }
 
-/*
+
 .wrapper{
     display: flex;
-    width: auto;
+    width: fit-content;
     height: auto;
     margin:auto;
     flex-direction: column;
-    background-color: cadetblue;
+    /*background-color: rgb(224, 224, 39);*/
+    flex-wrap: wrap;
+    flex-shrink: 0;
 }
-*/
 
 
-@media (min-width: 320px) and (max-width: 1042px) {
+
+@media (min-width: 200px) and (max-width: 1023px) {
   .project-one-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 200px;
+    margin-top: 40px;
   }
 
    .project2-container {
     display: flex;
     flex-direction:column-reverse;
     justify-content: center;
+    min-width: fit-content;
+    flex-shrink: 0;
   }
 
-    .project-one-name {
-        margin-top: 100px;
-    }
-
     .main-intro{
-      width: 700px;
+       flex-shrink: 0;     /* don’t shrink below content */
+       min-width: 700px;   /* set a sensible minimum */
     }
 
      .secondary-intro{
-      width: 700px;
+       flex-shrink: 0;     /* don’t shrink below content */
+       min-width: 700px;   /* set a sensible minimum */
     }
 
 }
+
+@media (min-width: 1190px) and (max-width: 2000px) {
+
+   .description-container{
+    margin-top: -150px;
+} 
+
     
+
+}
+
 
 .nav-container {
     display: flex;
@@ -60,30 +74,37 @@ body{
     flex-shrink: 0;
     align-self: stretch;
     margin: 10px 80px 10px 80px;
-    
+    /*background-color: blue;*/
+    min-width: fit-content;
 }
 
 .logo-name{
-    font-family: "Herr Von Muellerhoff", serif;
+    font-family:  "Herr Von Muellerhoff","Moon Dance", serif;
     font-size: 32px;
+    letter-spacing: 2px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
     width: 297px;
     height: 70px;
+   
 }
 
 .menu-container{
     height: 70px;
+   
 }
 
 .intro-container{
     display: flex;
-    padding: 0 430px 0 80px;
+    padding: 0 80px 0 80px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
     align-self: stretch;
+    /*background-color: tomato;*/
+    min-width: fit-content;
+    flex-shrink: 0;
 }
 
 .main-intro{
@@ -110,11 +131,13 @@ body{
 
 .project-one-container{
     display: flex;
-    padding:  80px;
+    padding:  10px 80px 100px 80px;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
-    margin-top: -100px;
+    min-width: fit-content;
+    flex-shrink: 0;
+    /*background-color: lightseagreen;*/
 }
 
 .description-container{
@@ -124,7 +147,6 @@ body{
     gap: 20px;
     flex: 1 0 0;
     margin-right: auto;
-    margin-top: 20px;
     height: auto;
     
 }
@@ -157,6 +179,7 @@ body{
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
+    
 }
 
 .button-text{
@@ -166,7 +189,17 @@ body{
     font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 36px */
+    border: 2px solid  #d3d8de;   /* width, style, color */
+    border-radius: 5px;          /* rounded corners */
+    cursor: pointer; 
+    padding: 5px 10px;
+    background-color: #bac3cc;
 }
+
+.button-text:hover {
+  background-color: #d9dde1;   /* darker shade on hover */
+}
+
 
 
 .phones{
@@ -184,6 +217,9 @@ body{
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    min-width: fit-content;
+    flex-shrink: 0;
+    /*background-color: lightskyblue;*/
 }
 
 .project2-demo{
@@ -201,7 +237,7 @@ body{
     align-items: flex-start;
     gap: 20px;
     flex: 1 0 0;
-    margin-top: -2px;
+    margin-top: -220px;
 }
 
 .project2-name{
@@ -223,22 +259,5 @@ body{
     align-self: stretch;
 }
 
-.button2-container{
-    display: flex;
-    width: 160px;
-    height: 36px;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.button2-text{
-    color: #000;
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%; /* 36px */
-}
 
 
