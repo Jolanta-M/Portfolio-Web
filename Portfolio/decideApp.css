@@ -157,20 +157,20 @@ body{
         font-size: 36px;
     }
 
-    .dApp-intro-container {
+    .intro-container {
         padding: 30px 40px 0 40px;
         margin-bottom: 20px;
     }
 
-    .dApp-main-header {
+    .main-header {
         font-size: 32px;
     }
 
-    .dApp-sub-header {
+    .sub-header {
         font-size: 24px;
     }
 
-    .dApp-gap-description {
+    .gap-description {
         font-size: 20px;
     }
 }
@@ -192,25 +192,25 @@ body{
         height: 28px;
     }
 
-    .dApp-intro-container {
+    .intro-container {
         padding: 20px 30px 0 30px;
         margin-bottom: 20px;
         margin-top: 20px;
     }
 
-    .dApp-main-header {
+    .main-header {
         font-size: 32px;
     }
 
-    .dApp-sub-header {
+    .sub-header {
         font-size: 24px;
     }
 
-    .dApp-gap-description {
+    .gap-description {
         font-size: 20px;
     }
 
-    .chapter-one-container {
+    .table-container {
         padding: 20px 0;
     }
 }
@@ -232,32 +232,32 @@ body{
         height: 24px;
     }
 
-    .dApp-intro-container {
+    .intro-container {
         padding: 15px 20px 0 20px;
         margin-bottom: 20px;
         margin-top: 15px;
     }
 
-    .dApp-main-header {
+    .main-header {
         font-size: 28px;
         line-height: 140%;
     }
 
-    .dApp-sub-header {
+    .sub-header {
         font-size: 20px;
         line-height: 140%;
     }
 
-    .dApp-gap-description {
+    .gap-description {
         font-size: 18px;
         line-height: 140%;
     }
 
-    .dApp-description-container {
+    .description-container {
         padding-bottom: 20px;
     }
 
-    .chapter-one-container {
+    .table-container {
         padding: 15px 0;
     }
 }
@@ -273,20 +273,20 @@ body{
         font-size: 26px;
     }
 
-    .dApp-intro-container {
+    .intro-container {
         padding: 12px 15px 0 15px;
         margin-bottom: 20px;
     }
 
-    .dApp-main-header {
+    .main-header {
         font-size: 24px;
     }
 
-    .dApp-sub-header {
+    .sub-header {
         font-size: 18px;
     }
 
-    .dApp-gap-description {
+    .gap-description {
         font-size: 16px;
     }
 }
