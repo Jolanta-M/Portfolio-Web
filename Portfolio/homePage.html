@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Moulpali&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/JM.JPG">
+    <link rel="stylesheet" href="homePage.css">
+
+ <style>
+    #viewport {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #333;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+    #breakpoint {
+      position: fixed;
+      bottom: 40px;
+      right: 10px;
+      background: #0066cc;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+  </style>
+
+</head>
+<body>
+    <!--Wrapper-->
+    <div class="wrapper">
+
+        <!--Nav Bar-->
+        <nav class="nav-container">
+            <div class="logo">
+                <p class="logo-name">Jolanta Miskelovic</p>
+            </div>
+            <div class="menu-container">
+                <!--aria-label describes for blind people what this textless button exactly does-->
+                <button class="menu-button" aria-label="Open menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 56 56" fill="none">
+                        <path d="M9.33325 40.2965V37.9631H46.6666V40.2965H9.33325ZM9.33325 29.1665V26.8331H46.6666V29.1665H9.33325ZM9.33325 18.0365V15.7031H46.6666V18.0365H9.33325Z" fill="black"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!--End of Nav Bar-->
+
+        <!--Introduction-->
+        <section class="intro-container">
+            <h1 class="main-intro">I’m a Computer Science graduate with the passion for art 
+    and psychology, aspiring to work as UX-UI designer.</h1>
+            <p class="secondary-intro">During the time in university I have gained experience 
+    working in Agile teams for several projects involving web development and UX / UI 
+    design. I am mostly fluent in frontend programming with HTML5 / CSS / JavaScript 
+    and REACT / REACT NATIVE.</p>
+        </section>
+        <!--End of Introduction-->
+
+        <!--Project 1-->
+        <section class="project-one-container">
+            <div class="description-container">
+                <h2 class="project-one-name">Project 1: Final University Project <br> Investigating solutions for enhancement of usefulness in 
+    personal decision support software</h2>
+                <p class="project-one-content">This project is using the research from psychology about the rational
+         and intuitive thinking styles and their role in human decision making. Based on this research it
+          was attempted to create additional functionality for the mobile decision applications so that 
+          users could get more value out of them. The new software solution was evaluated using within-subjects
+           experimental design and UMUX questionnaire.</p>
+                <div class="button-container">
+                    <button class="button-text" onclick="window.location.href='decideApp.html'">
+                        Learn More &raquo;</button>
+                </div>
+            </div>
+            <!--Image container-->
+            <div class="image-wrapper">
+                <img src="images/iPhone-frame2.png" alt="Decision Application images" class="image">
+            </div>
+            <!--End of Image container-->
+        </section>
+        <!--End of Project 1-->
+
+        <!--Project 2-->
+        <section class="project2-container">
+            <!--Project2 image-->
+            <div class="image-wrapper">
+                <img src="images/Project2-frame.png" alt="project two image" class="project2-image">
+            </div>
+            <!--End of Project2 image-->
+
+            <div class="project2-description-container">
+                <h2 class="project2-name">Second Project</h2>
+                <p class="project2-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <div class="button-container">
+                    <button class="button-text" onclick="window.location.href='decideApp.html'">
+                        Learn More &raquo;</button>
+                </div>
+            </div>
+        </section>
+        <!--End of Project 2-->
+
+  <!-- Elements your script updates -->
+  <div id="viewport"></div>
+  <div id="breakpoint"></div>
+
+    </div>
+    <!--End of Wrapper-->
+
+    <!--Script-->
+    <script src="script.js"></script>
+
+</body>
+</html>
