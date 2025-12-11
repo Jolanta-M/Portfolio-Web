@@ -16,6 +16,7 @@ body {
     color: #000;
     font-family: Moulpali, sans-serif;
     overflow-x: hidden;
+    padding-top: 100px;
 }
 
 /* ============================================
@@ -35,12 +36,30 @@ body {
    NAVIGATION
    ============================================ */
 
-.nav-container {
+.nav-wrapper {
     display: flex;
-    height: 120px;
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 80px;
+    
+}
+
+.nav-container {
+    display: flex;
+    height: 65px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px 10px 80px;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    background: #ECF3F4;       
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
 .logo-name {
@@ -127,8 +146,19 @@ body {
     max-width: 600px;
 }
 
+a {
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* inherit color from child */
+}
+
+a:hover .project-one-name {
+  transform: scale(1.003);   /* grows */ 
+  text-shadow: 2px 2px 8px rgba(46, 73, 88, 0.4); /* soft shadow */          
+}
+
 .project-one-name {
     color:  #000;
+    transition: transform 0.2s ease, color 0.2s ease,text-shadow 0.2s ease;
     font-family: Raleway, sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -169,9 +199,15 @@ body {
     max-width: 600px;
 }
 
+a:hover .project2-name {
+  transform: scale(1.003);   /* grows */ 
+  text-shadow: 2px 2px 8px rgba(46, 73, 88, 0.4); /* soft shadow */          
+}
+
 .project2-name {
     color: #000;
     font-family: Raleway, sans-serif;
+     transition: transform 0.2s ease, color 0.2s ease,text-shadow 0.2s ease;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -225,6 +261,7 @@ body {
 .button-text {
     color: #000;
     font-family: Raleway, sans-serif;
+    transition: transform 0.3s ease, color 0.3s ease; 
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -239,18 +276,22 @@ body {
 
 .button-text:hover {
     background-color: #d9dde1;
+    transform: scale(1.02);   /* grows */ 
 }
 
 .button-text:active {
     transform: translateY(1px);
 }
 
+
+
+
 /* ============================================
    MEDIA QUERIES - DESKTOP ADJUSTMENTS
    ============================================ */
 
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
-    .nav-container,
+   
     .intro-container,
     .project-one-container,
     .project2-container {
@@ -439,7 +480,7 @@ body {
 @media screen and (max-width: 400px) {
     .nav-container {
         padding: 10px 15px;
-        height: 70px;
+        height: 50px;
     }
 
     .logo-name {
