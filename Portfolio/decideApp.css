@@ -47,7 +47,7 @@ body{
     right: 0;
     background: #ECF3F4;       
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 100;
 }
 
 .logo-name{
@@ -174,7 +174,7 @@ body{
     flex-shrink: 0;
 }
 
-.gap-description{
+.description{
     color: #000;
     font-family: Raleway, sans-serif;
     font-size: 20px;
@@ -183,6 +183,36 @@ body{
     line-height: 150%;
     flex: 1 0 0;
     margin: 0;
+}
+
+.description-centered-version{
+    text-align: center;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-style:normal;
+    font-weight: 400;
+    line-height: 150%;
+    flex: 1 0 0;
+    margin: 0;
+}
+
+.center-list {
+    text-align: left;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-style:normal;
+    font-weight: 500;
+    line-height: 150%;
+    flex: 1 0 0;
+    margin: 0;
+
+}
+
+.text-bold {
+    font-weight: bold;
+    
 }
 
 .table-container {
@@ -201,6 +231,41 @@ body{
     height: auto;
     object-fit: contain;
    margin: 0 auto;  
+}
+
+.wireframes-container {
+  display: flex;
+  justify-content: space-between; /* Evenly spaced */
+  gap: 20px; /* Space between photos */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.wireframe {
+  flex: 1; /* Each item takes equal space */
+  max-width: calc(33.333% - 14px); /* Accounts for gap */
+}
+
+.wireframe-tool {
+  flex: 1; /* Each takes equal space */
+  max-width: calc(25% - 15px); /* 4 items = 25% each, minus gap */
+}
+
+.wireframe img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.wireframes-tools{
+  display: flex;
+  justify-content: space-between; /* Evenly spaced */
+  gap: 20px; /* Space between photos */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5px;
 }
 
 /* Tablet Styles - 768px to 1024px */
@@ -223,9 +288,11 @@ body{
         font-size: 24px;
     }
 
-    .gap-description {
+    .description {
         font-size: 20px;
     }
+ 
+   
 }
 
 /* Mobile Landscape - 600px to 768px */
@@ -259,20 +326,36 @@ body{
         font-size: 24px;
     }
 
-    .gap-description {
+    .description {
         font-size: 20px;
     }
 
     .table-container {
         padding: 20px 0;
     }
+
+    .wireframes-container {
+    flex-direction: column;
+}
+
+.wireframe{
+     max-width: 100%;
+}
+
+  .wireframes-tools {
+    flex-direction: column;
+}
+
+.wireframe-tool{
+     max-width: 100%;
+}
 }
 
 /* Mobile Portrait - below 600px */
 @media screen and (max-width: 600px) {
 
     .sticky-link {
-    background: #c4ced6; 
+    background: #7e93a4; 
     color:  #ECF3F4; 
     padding: 0px 5px; 
     text-decoration: none; 
@@ -314,7 +397,7 @@ body{
         line-height: 140%;
     }
 
-    .gap-description {
+    .description {
         font-size: 18px;
         line-height: 140%;
     }
@@ -326,6 +409,22 @@ body{
     .table-container {
         padding: 15px 0;
     }
+
+     .wireframes-container {
+    flex-direction: column;
+}
+
+.wireframe{
+     max-width: 100%;
+}
+
+  .wireframes-tools {
+    flex-direction: column;
+}
+
+.wireframe-tool{
+     max-width: 100%;
+}
 }
 
 /* Extra Small Mobile - below 400px */
@@ -352,7 +451,24 @@ body{
         font-size: 18px;
     }
 
-    .gap-description {
+    .description {
         font-size: 16px;
     }
+
+  .wireframes-container {
+    flex-direction: column;
+}
+
+.wireframe{
+     max-width: 100%;
+}
+
+  .wireframes-tools {
+    flex-direction: column;
+}
+
+.wireframe-tool{
+     max-width: 100%;
+}
+
 }
