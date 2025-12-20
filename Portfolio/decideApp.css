@@ -227,7 +227,7 @@ body{
 
 .table {
     display: block;
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     object-fit: contain;
    margin: 0 auto;  
