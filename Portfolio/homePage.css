@@ -52,7 +52,7 @@ body {
     height: 65px;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 80px 10px 80px;
+    padding: 10px 40px 10px 40px;
     position: fixed;
     top: 0;
     left: 0; 
@@ -81,7 +81,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
+    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +98,7 @@ body {
 
 .intro-container {
     display: flex;
-    padding: 40px 80px 20px 80px;
+    padding: 40px 40px 20px 40px;
     flex-direction: column;
     align-items: flex-start;
     gap: 35px;
@@ -130,7 +130,7 @@ body {
 
 .project-one-container {
     display: flex;
-    padding: 20px 80px 0px 80px;
+    padding: 20px 40px 0px 40px;
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
@@ -183,7 +183,7 @@ a:hover .project-one-name {
 
 .project2-container {
     display: flex;
-    padding: 0px 80px 10px 80px;
+    padding: 0px 40px 10px 40px;
     gap: 20px;
     justify-content: space-between;
     align-items: flex-start;
@@ -295,8 +295,8 @@ a:hover .project2-name {
     .intro-container,
     .project-one-container,
     .project2-container {
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .image {
@@ -314,7 +314,7 @@ a:hover .project2-name {
 
 @media screen and (max-width: 1199px) {
     .nav-container {
-        padding: 10px 40px;
+        padding: 10px 30px;
         height: 100px;
     }
 
@@ -499,11 +499,13 @@ a:hover .project2-name {
         font-size: 16px;
     }
 
+    /*
     .project-one-container,
     .project2-container {
         padding: 30px 15px;
         gap: 25px;
     }
+*/
 
      .project-one-container {
         flex-direction: column;
