@@ -95,7 +95,16 @@ color: inherit; /* inherits color from parent element */
 }
 
 .sticky-link {
-    background: #7e93a4; 
+    background: #4967c3; 
+    color:  #ECF3F4; 
+    padding: 0px 5px; 
+    text-decoration: none; 
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.sticky-link-for-code {
+    background: #487aa3; 
     color:  #ECF3F4; 
     padding: 0px 5px; 
     text-decoration: none; 
