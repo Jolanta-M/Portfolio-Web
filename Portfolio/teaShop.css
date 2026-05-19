@@ -114,11 +114,11 @@ color: inherit; /* inherits color from parent element */
 .references-one-box {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content:flex-start;
     margin-bottom: 20px;
     margin-top: 0px;
     padding: 30px 40px 30px 0px;
-    align-items: center;
+    align-items:self-start;
     align-self: stretch;
     min-width: fit-content;
     flex-shrink: 0;
@@ -127,17 +127,13 @@ color: inherit; /* inherits color from parent element */
 .references-one {
     color: #060606;
     font-family: Raleway, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-style:normal;
-    font-weight: 600;
-    line-height: 180%;
+    font-weight: 800;
+    line-height: 200%;
     flex: 1 0 0;
     margin: 0;
-    border: 2px solid #182d48;
-    border-radius: 2px;
     padding: 5px 2px;
-    cursor: pointer;
-     background-color: rgb(172, 195, 215);
 }
 
 .intro-container{
@@ -199,6 +195,19 @@ color: inherit; /* inherits color from parent element */
     margin: 0;
 }
 
+.ul-description{
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-style:normal;
+    font-weight: 400;
+    line-height: 150%;
+    flex: 1 0 0;
+    margin: 0;
+    align-self: flex-start;
+    padding-left: 20px;
+}
+
 .description-centered-version{
     text-align: center;
     color: #000;
@@ -224,6 +233,10 @@ color: inherit; /* inherits color from parent element */
 
 }
 
+ul {
+  padding-left: 20px; /* adjust this number to align with your text */
+}
+
 .text-bold {
     font-weight: bold;
     
@@ -235,16 +248,25 @@ color: inherit; /* inherits color from parent element */
     align-items: center;
     gap: 5px;
     width: 100%;
-    max-width: 1500px; /* adjust this number to whatever fits nicely */
+    max-width: 890px; /* adjust this number to whatever fits nicely */
     margin: 0 auto;
 }
 
 .table {
     display: block;
-    max-width: 90%;
+    max-width: 80%;
     height: auto;
     object-fit: contain;
-   margin: 0 auto;  
+    margin: 0 auto; 
+}
+
+.table-multiple {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    padding-bottom: 50px; 
 }
 
 .wireframes-container {
@@ -422,6 +444,12 @@ color: inherit; /* inherits color from parent element */
      max-width: 100%;
      margin-left: 80px;
      margin-right: 80px;
+}
+
+.link-deco{
+  font-size: 14px; /* or whatever size you need */
+  color: your-colour;
+  text-decoration: none; /* removes underline if you want */
 }
 
 

@@ -183,7 +183,7 @@ a:hover .project-one-name {
 
 .project2-container {
     display: flex;
-    padding: 0px 40px 10px 40px;
+    padding: 0px 40px 0px 40px;
     gap: 20px;
     justify-content: space-between;
     align-items: flex-start;
@@ -191,7 +191,7 @@ a:hover .project-one-name {
 
 .project2-description-container {
     display: flex;
-    padding: 100px 0px 0px 0px;
+    padding: 40px 0px 80px 0px;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
@@ -247,6 +247,7 @@ a:hover .project2-name {
     height: auto;
     display: block;
     object-fit: cover;
+    margin-top: -50px;
 }
 
 /* ============================================
