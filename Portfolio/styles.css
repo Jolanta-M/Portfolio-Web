@@ -40,26 +40,25 @@ body {
     display: flex;
     width: 100%;
     max-width: 1440px;
-    height: auto;
+    height: 70px;
     margin: auto;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 30px 10px 40px;
     
 }
 
 .nav-container {
     display: flex;
     height: 65px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px 10px 40px;
     position: fixed;
     top: 0;
-    left: 0; 
+    left: 0;
     right: 0;
-    background: #ECF3F4;       
+    background: #ECF3F4;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
+    justify-content: center; /* centres the wrapper inside */
 }
 
 .logo-name {
@@ -91,6 +90,145 @@ body {
     width: 36px;
     height: 36px;
 }
+
+/* hamburger hidden on large screens */
+.menu-container {
+    display: none;
+    align-items: center;
+}
+
+/* ============================================
+   DESKTOP DROPDOWN
+   ============================================ */
+
+/* nav links container - visible on large screens */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight:600;
+    white-space: nowrap;
+    padding: 4px 0;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* dropdown wrapper */
+.dropdown {
+    position: relative;
+}
+
+/* hidden by default */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ECF3F4;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 200;
+}
+
+/* show on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobile-menu {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    position: fixed;
+    top: 65px; /* matches nav height */
+    left: 0;
+    right: 0;
+    background: #ECF3F4;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 99;
+    padding: 10px 0;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-link {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.mobile-link:hover {
+    background: rgba(0,0,0,0.04);
+}
+
+/* mobile dropdown */
+.mobile-dropdown-toggle {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-dropdown-toggle::after {
+    content: "▾"; /* down arrow indicator */
+}
+
+.mobile-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.03);
+}
+
+.mobile-dropdown-menu.open {
+    display: flex;
+}
+
+.mobile-dropdown-menu .mobile-link {
+    padding-left: 50px; /* indented under parent */
+    font-size: 16px;
+}
+
 
 /* ============================================
    INTRODUCTION SECTION
@@ -315,8 +453,8 @@ a:hover .project2-name {
 
 @media screen and (max-width: 1199px) {
     .nav-container {
-        padding: 10px 30px;
-        height: 100px;
+        padding: 2px 2px 10px 5px;
+        height: 70px;
     }
 
     .logo-name {
@@ -361,7 +499,7 @@ a:hover .project2-name {
     }
 
     .project2-image {
-        max-width: 400px;
+        max-width: 500px;
     }
 }
 
@@ -370,6 +508,12 @@ a:hover .project2-name {
    ============================================ */
 
 @media screen and (max-width: 1000px) {
+
+    .nav-container {
+        padding: 2px 2px 10px 5px;
+        height: 70px;
+    }
+
     .project-one-container {
         flex-direction: column;
         align-items: center;
@@ -397,20 +541,33 @@ a:hover .project2-name {
         max-width: 100%;
         width: 100%;
     }
+    
 }
+
 
 /* ============================================
    MEDIA QUERIES - MOBILE (below 600px)
    ============================================ */
 
 @media screen and (max-width: 600px) {
+
+    /* show hamburger */
+    .menu-container {
+        display: flex;
+    }
+
+    /* hide nav links */
+    .nav-links {
+        display: none;
+    }
+    
     .nav-container {
-        padding: 10px 20px;
-        height: 80px;
+        padding: 0px 0px 5px 0px;
+        height: 60px;
     }
 
     .logo-name {
-        font-size: 24px;
+        font-size: 25px;
         letter-spacing: 1px;
     }
 
@@ -479,13 +636,14 @@ a:hover .project2-name {
    ============================================ */
 
 @media screen and (max-width: 400px) {
+    
     .nav-container {
-        padding: 10px 15px;
-        height: 50px;
+        padding: 0px 0px 5px 0px;
+        height: 60px;
     }
 
     .logo-name {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .intro-container {
@@ -511,7 +669,7 @@ a:hover .project2-name {
      .project-one-container {
         flex-direction: column;
         align-items: center;
-        padding: 0px 20px 5px 20px;
+        padding: 0px 20px 30px 20px;
         margin-top: -60px;
         gap: 20px;
     }
@@ -519,8 +677,8 @@ a:hover .project2-name {
     .project2-container {
         flex-direction: column-reverse;
         align-items: center;
-        padding: 10px 20px 5px 20px;
-        margin-top: -140px;
+        padding: 15px 20px 5px 20px;
+        margin-top: -100px;
         gap: 20px;
     }
 
@@ -533,4 +691,5 @@ a:hover .project2-name {
     .project2-content {
         font-size: 16px;
     }
+
 }
