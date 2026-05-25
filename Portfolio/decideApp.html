@@ -18,11 +18,12 @@
     <div class="wrapper">
 
 <!--Nav Bar-->
-        <div class="nav-container">
+        <nav class="nav-container">
           <div class="nav-wrapper">
             <div class="logo">
                 <p class="logo-name"><a href="index.html" class="logo-noDeco">Jolanta Miskelovic</a></p>
             </div>
+
             <div class="sticky-link-box">
  <a href="https://1drv.ms/b/c/3724088a35545ef3/IQBCBo8Xb8Q-Saaf8905IirNAVv_jnlqK55LJeqJxP5Gucc?e=5dQSeC"
   target="_blank"
@@ -32,21 +33,73 @@
 <a href="https://github.com/Jolanta-M/DecisionApp"
   target="_blank"
   class="sticky-link-for-code"
-  title="Access Code on GitHub">📄<span class="hide-on-mobile">Access Code on GitHub</span></a>
+  title="Access Code on GitHub">📄<span class="hide-on-mobile">View GitHub Code</span></a>
 
 </div>
+
+  <!-- Desktop nav links -->
+    <div class="nav-links">
+
+    <!-- Regular link -->
+      <a href="index.html" class="nav-link">Home</a>
+
+      <!-- Link WITH dropdown -->
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Projects</a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item disabled">DecideApp</a>
+          <a href="teaShop.html" class="dropdown-item">TeaShop</a>
+        </div>
+      </div>
+
+       <!-- Link WITH dropdown -->
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Contact Me</a>
+        <div class="dropdown-menu">
+          <a href="https://www.linkedin.com/in/jolanta-m" target="_blank" class="dropdown-item">LinkedIn</a>
+          <a href="mailto:miskelovicjolanta@gmail.com" class="dropdown-item">Email Me</a>
+        </div>
+      </div>
+
+    </div>
+
             <div class="menu-container">
-                <button class="menu-button">
+                <button class="menu-button" onclick="toggleMenu()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 56 56" fill="none">
                 <path d="M9.33325 40.2965V37.9631H46.6666V40.2965H9.33325ZM9.33325 29.1665V26.8331H46.6666V29.1665H9.33325ZM9.33325 18.0365V15.7031H46.6666V18.0365H9.33325Z" fill="black"/>
                 </svg>
                 </button>
             </div>
+            
             </div>
-        </div>
+          </nav>
 <!--End of Nav Bar-->
   
- 
+  <!-- Mobile menu dropdown -->
+<div class="mobile-menu" id="mobileMenu">
+   <a href="index.html" class="mobile-link">Home</a>
+  <!-- Mobile dropdown -->
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+      Projects
+    </button>
+    <div class="mobile-dropdown-menu">
+      <a href="#" class="mobile-link disabled">DecideApp</a>
+      <a href="teaShop.html" class="mobile-link">TeaShop</a>
+    </div>
+  </div>
+
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+      Contact Me
+    </button>
+    <div class="mobile-dropdown-menu">
+      <a href="https://www.linkedin.com/in/jolanta-m" target="_blank" class="mobile-link">LikedIn</a>
+      <a href="mailto:miskelovicjolanta@gmail.com" class="mobile-link">Email Me</a>
+    </div>
+  </div>
+
+</div>
 
 <!--Chapter one-->
 <div class="intro-container">
@@ -443,7 +496,30 @@ and meaningful way, but only to some minor extent.</p>
     </div>
     <!--End of Wrapper-->
 
-    <!--Script-->
+    
+     <!--Script-->
+  <script>
+  // toggles mobile menu open/closed
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+
+  // toggles individual mobile dropdown open/closed
+  function toggleMobileDropdown(button) {
+    const dropdownMenu = button.nextElementSibling;
+    dropdownMenu.classList.toggle('open');
+  }
+
+  // closes mobile menu if user clicks outside it
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.menu-button');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
    
 </body>
 </html>

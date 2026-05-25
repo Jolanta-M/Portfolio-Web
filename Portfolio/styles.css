@@ -119,7 +119,8 @@ body {
 }
 
 .nav-link:hover {
-    opacity: 0.7;
+  transform: scale(1.003);   /* grows */ 
+  text-shadow: 3px 3px 9px rgba(46, 73, 88, 0.4); /* soft shadow */ 
 }
 
 /* dropdown wrapper */
@@ -157,7 +158,8 @@ body {
 }
 
 .dropdown-item:hover {
-    background: rgba(0,0,0,0.05);
+  background: rgba(0,0,0,0.05);
+  font-weight: 600;
 }
 
 /* ============================================
@@ -546,12 +548,12 @@ a:hover .project2-name {
 
 
 /* ============================================
-   MEDIA QUERIES - MOBILE (below 600px)
+   MEDIA QUERIES - TABLET/MOBILE (below 900px)
    ============================================ */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 
-    /* show hamburger */
+     /* show hamburger */
     .menu-container {
         display: flex;
     }
@@ -560,6 +562,49 @@ a:hover .project2-name {
     .nav-links {
         display: none;
     }
+
+    .nav-container {
+        padding: 2px 2px 10px 5px;
+        height: 70px;
+    }
+
+    .project-one-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 40px 5px 40px;
+        margin-top: -60px;
+        gap: 20px;
+    }
+
+    .project2-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 0px 40px 5px 40px;
+        margin-top: -140px;
+        gap: 20px;
+    }
+
+    .description-container,
+    .project2-description-container {
+        max-width: 100%;
+    }
+
+    
+    .image,
+    .project2-image {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+}
+
+
+/* ============================================
+   MEDIA QUERIES - MOBILE (below 600px)
+   ============================================ */
+
+@media screen and (max-width: 600px) {
+
     
     .nav-container {
         padding: 0px 0px 5px 0px;

@@ -1,3 +1,7 @@
+/* ============================================
+   BASE STYLES & RESET
+   ============================================ */
+
 html {
     box-sizing: border-box;
 }
@@ -6,7 +10,7 @@ html {
     box-sizing: inherit;
 }
 
-body{
+body {
     margin: 0;
     background: #ECF3F4;
     color: #000;
@@ -15,7 +19,11 @@ body{
     padding-top: 100px;
 }
 
-.wrapper{
+/* ============================================
+   WRAPPER
+   ============================================ */
+
+.wrapper {
     display: flex;
     width: 100%;
     max-width: 1440px;
@@ -24,33 +32,38 @@ body{
     flex-direction: column;
 }
 
-.nav-wrapper {
-    display: flex;
-    width: 100%;
-    max-width: 1440px;
-    height: auto;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    
-}
+/* ============================================
+   NAVIGATION
+   ============================================ */
 
 .nav-container {
     display: flex;
     height: 65px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px 10px 40px;
     position: fixed;
     top: 0;
-    left: 0; 
+    left: 0;
     right: 0;
-    background: #ECF3F4;       
+    background: #ECF3F4;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
+    justify-content: center;
 }
 
-.logo-name{
+/* nav-wrapper strictly constrained to 1440px,
+   padding kept inside so buttons never push beyond the max */
+.nav-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    height: 65px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 10px 40px;
+    overflow: visible;
+}
+
+.logo-name {
     font-family: "Herr Von Muellerhoff", "Moon Dance", serif;
     font-size: 32px;
     letter-spacing: 2px;
@@ -58,16 +71,18 @@ body{
     font-weight: 500;
     line-height: normal;
     margin: 0;
+    /* prevents logo from shrinking and pushing buttons out */
+    flex-shrink: 0;
 }
 
 .logo-noDeco {
-text-decoration: none;
-color: inherit; /* inherits color from parent element */
+    text-decoration: none;
+    color: inherit;
 }
 
-.menu-container{
-    display: flex;
-    align-items: center;
+.logo-noDeco:hover {
+ transform: scale(1.003);   /* grows */ 
+  text-shadow: 2px 2px 8px rgba(46, 73, 88, 0.4); /* soft shadow */ 
 }
 
 .menu-button {
@@ -85,62 +100,225 @@ color: inherit; /* inherits color from parent element */
     height: 36px;
 }
 
+.menu-button svg:hover {
+ transform: scale(1.05);
+}
+
+/* hamburger hidden on large screens */
+.menu-container {
+    display: none;
+    align-items: center;
+}
+
+/* ============================================
+   DESKTOP DROPDOWN
+   ============================================ */
+
+/* nav links container - visible on large screens */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight:600;
+    white-space: nowrap;
+    padding: 4px 0;
+}
+
+.nav-link:hover {
+  transform: scale(1.003);   /* grows */ 
+  text-shadow: 3px 3px 9px rgba(46, 73, 88, 0.4); /* soft shadow */
+}
+
+/* dropdown wrapper */
+.dropdown {
+    position: relative;
+}
+
+/* hidden by default */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ECF3F4;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 200;
+}
+
+/* show on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-item.disabled {
+    text-decoration:none;
+    color: #919192;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: rgba(0,0,0,0.05);
+  font-weight: 600;
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobile-menu {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    position: fixed;
+    top: 65px; /* matches nav height */
+    left: 0;
+    right: 0;
+    background: #ECF3F4;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 101;
+    padding: 10px 0;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-link {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+
+.mobile-link.disabled {
+    text-decoration: none;
+    color: #919192;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.mobile-link:hover {
+  background: rgba(0,0,0,0.05);
+  font-weight: 600;
+}
+
+/* mobile dropdown */
+.mobile-dropdown-toggle {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-dropdown-toggle::after {
+    content: "▾"; /* down arrow indicator */
+}
+
+.mobile-dropdown-toggle:hover{
+  font-weight: 600;
+}
+
+.mobile-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.03);
+}
+
+.mobile-dropdown-menu.open {
+    display: flex;
+}
+
+.mobile-dropdown-menu .mobile-link {
+    padding-left: 50px; /* indented under parent */
+    font-size: 16px;
+}
+
+
+/* ============================================
+   NAV BUTTONS / STICKY LINKS
+   ============================================ */
+
 .sticky-link-box {
-    position: sticky; 
-    top: 0px;   
-    background:  #ECF3F4; 
-    text-align:right; 
+    position: sticky;
+    top: 0px;
+    background: #ECF3F4;
+    text-align: right;
     z-index: 100;
-    margin-inline-start: auto; 
+    margin-inline-start: auto;
+    padding-right: 4%;
 }
 
 .sticky-link {
-    background: #4967c3; 
-    color:  #ECF3F4; 
-    padding: 0px 5px; 
-    text-decoration: none; 
+    background: #42769e;
+    color: #ECF3F4;
+    padding: 2px 8px;
+    text-decoration: none;
     border-radius: 5px;
     margin-right: 10px;
+    font-size: 14px;
+    white-space: nowrap; /* prevents button text wrapping */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* shadow */
+}
+
+.sticky-link:hover {
+ box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* shadow */
 }
 
 .sticky-link-for-code {
-    background: #487aa3; 
-    color:  #ECF3F4; 
-    padding: 0px 5px; 
-    text-decoration: none; 
+    background: #767f86;
+    color: #ECF3F4;
+    padding: 2px 8px;
+    text-decoration: none;
     border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* shadow */
 }
 
-.references-one-box {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    margin-bottom: 20px;
-    margin-top: 0px;
-    padding: 30px 40px 30px 0px;
-    align-items: center;
-    align-self: stretch;
-    min-width: fit-content;
-    flex-shrink: 0;
+.sticky-link-for-code:hover {
+ box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* shadow */
 }
 
-.references-one {
-    color: #060606;
-    font-family: Raleway, sans-serif;
-    font-size: 10px;
-    font-style:normal;
-    font-weight: 600;
-    line-height: 180%;
-    flex: 1 0 0;
-    margin: 0;
-    border: 2px solid #182d48;
-    border-radius: 2px;
-    padding: 5px 2px;
-    cursor: pointer;
-     background-color: rgb(172, 195, 215);
-}
+/* ============================================
+   CHAPTERS SECTION
+   ============================================ */
 
-.intro-container{
+.intro-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,23 +327,21 @@ color: inherit; /* inherits color from parent element */
     padding: 30px 80px 0 80px;
     align-items: center;
     align-self: stretch;
-    min-width: fit-content;
-    flex-shrink: 0;
 }
 
-.main-header{
+.main-header {
     color: #000;
     font-family: Moulpali, sans-serif;
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    align-self: stretch;
     margin: 0 0 60px 0;
     align-self: center;
+    text-align: center;
 }
 
-.sub-header{
+.sub-header {
     color: #000;
     font-family: Moulpali, sans-serif;
     font-size: 24px;
@@ -174,7 +350,7 @@ color: inherit; /* inherits color from parent element */
     line-height: 150%;
     align-self: stretch;
     margin: 0 0 30px 0;
-    align-self: center;
+    text-align: center;
 }
 
 .description-container {
@@ -184,27 +360,25 @@ color: inherit; /* inherits color from parent element */
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    min-width: fit-content;
-    flex-shrink: 0;
 }
 
-.description{
+.description {
     color: #000;
     font-family: Raleway, sans-serif;
     font-size: 20px;
-    font-style:normal;
+    font-style: normal;
     font-weight: 400;
     line-height: 150%;
     flex: 1 0 0;
     margin: 0;
 }
 
-.description-centered-version{
+.description-centered-version {
     text-align: center;
     color: #000;
     font-family: Raleway, sans-serif;
     font-size: 20px;
-    font-style:normal;
+    font-style: normal;
     font-weight: 400;
     line-height: 150%;
     flex: 1 0 0;
@@ -216,18 +390,51 @@ color: inherit; /* inherits color from parent element */
     color: #000;
     font-family: Raleway, sans-serif;
     font-size: 20px;
-    font-style:normal;
+    font-style: normal;
     font-weight: 500;
     line-height: 150%;
     flex: 1 0 0;
     margin: 0;
-
 }
 
 .text-bold {
     font-weight: bold;
-    
 }
+
+/* ============================================
+   REFERENCES SECTION
+   ============================================ */
+
+.references-one-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    padding: 30px 40px 30px 0px;
+    align-items: center;
+    align-self: stretch;
+}
+
+.references-one {
+    color: #060606;
+    font-family: Raleway, sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 180%;
+    flex: 1 0 0;
+    margin: 0;
+    border: 2px solid #182d48;
+    border-radius: 2px;
+    padding: 5px 2px;
+    cursor: pointer;
+    background-color: rgb(172, 195, 215);
+}
+
+/* ============================================
+   TABLE IMAGE SECTION
+   ============================================ */
 
 .table-container {
     display: flex;
@@ -235,7 +442,7 @@ color: inherit; /* inherits color from parent element */
     align-items: center;
     gap: 5px;
     width: 100%;
-    max-width: 1500px; /* adjust this number to whatever fits nicely */
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -244,69 +451,85 @@ color: inherit; /* inherits color from parent element */
     max-width: 90%;
     height: auto;
     object-fit: contain;
-   margin: 0 auto;  
+    margin: 0 auto;
 }
 
+/* ============================================
+   WIREFRAMES SECTION
+   ============================================ */
+
+
 .wireframes-container {
-  display: flex;
-  justify-content: space-between; /* Evenly spaced */
-  gap: 20px; /* Space between photos */
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 5px;
 }
 
 .wireframe {
-  flex: 1; /* Each item takes equal space */
-  max-width: calc(33.333% - 14px); /* Accounts for gap */
+    flex: 1;
+    min-width: 0; /* prevents flex children from overflowing */
 }
 
-.screenshot{
-   flex: 1; /* Each item takes equal space */
-  max-width: calc(33.333% - 14px); /* Accounts for gap */  
+.screenshot {
+    flex: 1;
+    min-width: 0;
 }
 
 .wireframe-tool {
-  flex: 1; /* Each takes equal space */
-  max-width: calc(25% - 15px); /* 4 items = 25% each, minus gap */
+    flex: 1;
+    min-width: 0;
 }
 
-.screenshot4{
-  flex: 1; /* Each takes equal space */
-  max-width: calc(25% - 15px); /* 4 items = 25% each, minus gap */
+.screenshot4 {
+    flex: 1;
+    min-width: 0;
 }
 
-.wireframe img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px; /* Optional: rounded corners */
+.wireframe img,
+.screenshot img,
+.wireframe-tool img,
+.screenshot4 img,
+.twoIMG img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
 }
 
-.wireframes-tools{
-  display: flex;
-  justify-content: space-between; /* Evenly spaced */
-  gap: 20px; /* Space between photos */
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5px;
+.wireframes-tools {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 5px;
 }
 
 .container-twoIMG {
-  display: flex;
-  justify-content: space-between; /* Evenly spaced */
-  gap: 20px; /* Space between photos */
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 5px;
 }
 
- .twoIMG {
-  flex: 1; /* Each item takes equal space */
-  max-width: calc(50% - 10px); /* Accounts for gap */
+.twoIMG {
+    flex: 1;
+    min-width: 0;
 }
 
-.chapter5-container{
+/* ============================================
+   CHAPTER FIVE SECTION
+   ============================================ */
+
+.chapter5-container {
     padding-top: 60px;
 }
 
@@ -325,16 +548,17 @@ color: inherit; /* inherits color from parent element */
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 
+/* ============================================
+   MEDIA QUERIES - TABLET (max 1199px)
+   ============================================ */
 
-
-/* Tablet Styles - 768px to 1024px */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1199px) {
 
     .logo-name {
-        font-size: 36px;
+        font-size: 28px;
     }
 
     .intro-container {
@@ -343,35 +567,81 @@ color: inherit; /* inherits color from parent element */
     }
 
     .main-header {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .sub-header {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .description {
-        font-size: 20px;
+        font-size: 18px;
     }
- 
-   
+
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 12px;
+        padding: 2px 4px;
+    }
+
+    
+
 }
 
-/* Mobile Landscape - 600px to 768px */
-@media screen and (max-width: 768px) {
-   .nav-container {
-        padding: 10px 30px;
+
+/* ============================================
+   MEDIA QUERIES - TABLET (max 1000px)
+   ============================================ */
+
+@media screen and (max-width: 1000px) {
+
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 12px;
+        padding: 1px 3px;
+    }
+}
+
+/* ============================================
+   MEDIA QUERIES - TABLET/MOBILE (max 900px)
+   hamburger appears, nav links hide
+   ============================================ */
+
+@media screen and (max-width: 900px) {
+
+      /* show hamburger */
+    .menu-container {
+        display: flex;
+    }
+
+    /* hide nav links */
+    .nav-links {
+        display: none;
+    }
+
+    .nav-container {
         height: 60px;
     }
 
-    .logo-name {
-        font-size: 30px;
-        max-width: 200px;
+    .nav-wrapper {
+        padding: 10px 10px 10px 25px;
+        height: 60px;
     }
 
-    .menu-button svg {
-        width: 28px;
-        height: 28px;
+    .mobile-menu {
+        top: 60px; /* matches nav height at this breakpoint */
+    }
+
+    .logo-name {
+        font-size: 28px;
+    }
+
+    .sticky-link-for-code{
+        padding: 0px 4px;
+    }
+
+     .sticky-link{
+        padding: 0px 4px;
     }
 
     .intro-container {
@@ -381,80 +651,83 @@ color: inherit; /* inherits color from parent element */
     }
 
     .main-header {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     .sub-header {
-        font-size: 24px;
-    }
-
-    .description {
         font-size: 20px;
     }
 
-    .table-container {
-        padding: 20px 0;
+    .description {
+        font-size: 18px;
     }
 
-    .wireframes-container {
-    flex-direction: column;
+    .wireframes-container,
+    .wireframes-tools,
+    .container-twoIMG {
+        max-width: 620px;
+    }
+
+    .wireframe,
+    .screenshot,
+    .wireframe-tool,
+    .screenshot4,
+    .twoIMG {
+        max-width: 100%;
+    }
 }
 
-.wireframe{
-     max-width: 100%;
-}
+/* ============================================
+   MEDIA QUERIES - TABLET/MOBILE (max 700px)
+   hamburger appears, nav links hide
+   ============================================ */
 
-.screenshot{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
+@media screen and (max-width: 700px) {
 
-  .wireframes-tools {
-    flex-direction: column;
-}
-
-.wireframe-tool{
-     max-width: 100%;
-}
-
-.screenshot4{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 9px;
+        padding: 1px 3px;
+    }
 }
 
 
-}
+/* ============================================
+   MEDIA QUERIES - MOBILE (max 600px)
+   ============================================ */
 
-/* Mobile Portrait - below 600px */
 @media screen and (max-width: 600px) {
 
-    .sticky-link {
-    background: #7e93a4; 
-    color:  #ECF3F4; 
-    padding: 0px 5px; 
-    text-decoration: none; 
-    border-radius: 5px;
-}
+    body {
+        padding-top: 80px;
+    }
 
-.hide-on-mobile {
-      display: none;  /* Hides the text */
+    /* hides sticky link's text on mobile and leaves only small icons of them*/
+    .hide-on-mobile {
+        display: none;
     }
 
     .nav-container {
-        padding: 10px 20px;
-        height: 60px;
+        height: 55px;
+    }
+
+    .nav-wrapper {
+         padding: 10px 10px 10px 25px;
+        height: 55px;
+    }
+
+    .mobile-menu {
+        top: 55px; /* matches nav height at this breakpoint */
     }
 
     .logo-name {
-        font-size: 28px;
+        font-size: 26px;
         max-width: 180px;
     }
 
     .menu-button svg {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
     }
 
     .intro-container {
@@ -464,8 +737,9 @@ color: inherit; /* inherits color from parent element */
     }
 
     .main-header {
-        font-size: 28px;
+        font-size: 24px;
         line-height: 140%;
+        margin-bottom: 40px;
     }
 
     .sub-header {
@@ -474,7 +748,7 @@ color: inherit; /* inherits color from parent element */
     }
 
     .description {
-        font-size: 18px;
+        font-size: 17px;
         line-height: 140%;
     }
 
@@ -486,45 +760,59 @@ color: inherit; /* inherits color from parent element */
         padding: 15px 0;
     }
 
-     .wireframes-container {
-    flex-direction: column;
-}
+    .table {
+        max-width: 100%;
+    }
 
-.wireframe{
-     max-width: 100%;
-}
+/* wireframes stack vertically on smaller screens */
+    .wireframes-container,
+    .wireframes-tools,
+    .container-twoIMG {
+        flex-direction: column;
+        max-width: 300px;
+    }
 
-.screenshot{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
-
-  .wireframes-tools {
-    flex-direction: column;
-}
-
-.wireframe-tool{
-     max-width: 100%;
-}
-
-.screenshot4{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
+    .wireframe,
+    .screenshot,
+    .wireframe-tool,
+    .screenshot4,
+    .twoIMG {
+        max-width: 100%;
+    }
 
 }
 
-/* Extra Small Mobile - below 400px */
+
+/* ============================================
+   MEDIA QUERIES - EXTRA SMALL MOBILE (max 400px)
+   ============================================ */
+
 @media screen and (max-width: 400px) {
+
+    body {
+        padding-top: 70px;
+    }
+
     .nav-container {
-        padding: 10px 15px;
         height: 50px;
     }
 
+    .nav-wrapper {
+         padding: 10px 5px 10px 20px;
+        height: 50px;
+    }
+
+    .mobile-menu {
+        top: 50px; /* matches nav height at this breakpoint */
+    }
+
     .logo-name {
-        font-size: 26px;
+        font-size: 22px;
+    }
+
+    .menu-button svg {
+        width: 24px;
+        height: 24px;
     }
 
     .intro-container {
@@ -533,7 +821,7 @@ color: inherit; /* inherits color from parent element */
     }
 
     .main-header {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .sub-header {
@@ -544,32 +832,12 @@ color: inherit; /* inherits color from parent element */
         font-size: 16px;
     }
 
-  .wireframes-container {
-    flex-direction: column;
-}
+    .center-list {
+        font-size: 14px;
+        font-weight: 400;
+    }
 
-.wireframe{
-     max-width: 100%;
-}
-
-.screenshot{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
-
-  .wireframes-tools {
-    flex-direction: column;
-}
-
-.wireframe-tool{
-     max-width: 100%;
-}
-
-.screenshot4{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
-
+    .references-one {
+        font-size: 9px;
+    }
 }
