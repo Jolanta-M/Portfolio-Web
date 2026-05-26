@@ -1,0 +1,22 @@
+/* ============================================
+   Global style and local font for logo
+   ============================================ */
+
+@font-face {
+  font-family: "Herr Von Muellerhoff";
+  src: url("/Portfolio/fonts/HerrVonMuellerhoff-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.logo-name {
+    font-family: "Herr Von Muellerhoff", "Mr De Haviland", "Alex Brush", cursive;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    /* prevents logo from shrinking and pushing buttons out */
+    flex-shrink: 0;
+}

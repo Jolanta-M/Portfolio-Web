@@ -19,6 +19,7 @@ body {
     padding-top: 100px;
 }
 
+
 /* ============================================
    WRAPPER
    ============================================ */
@@ -65,17 +66,7 @@ body {
     overflow: visible;
 }
 
-.logo-name {
-    font-family: "Herr Von Muellerhoff", "Moon Dance", serif;
-    font-size: 32px;
-    letter-spacing: 2px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
-     /* prevents logo from shrinking and pushing buttons out */
-    flex-shrink: 0;
-}
+/*logo-name class for logo style is in global css*/
 
 /* hamburger hidden on large screens */
 .menu-container {
