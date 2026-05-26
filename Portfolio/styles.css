@@ -45,6 +45,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px 10px 40px;
+     /*overflow visible so dropdowns show below nav */
+    overflow: visible;
     
 }
 
@@ -59,6 +61,8 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
     justify-content: center; /* centres the wrapper inside */
+    /* overflow visible so dropdowns are not clipped */
+    overflow: visible;
 }
 
 .logo-name {
@@ -425,7 +429,7 @@ a:hover .project2-name {
     cursor: pointer;
     padding: 5px 10px;
     background-color: #bac3cc;
-    transition: background-color 0.3s ease;
+    transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 .button-text:hover {
@@ -468,8 +472,12 @@ a:hover .project2-name {
 
 @media screen and (max-width: 1199px) {
     .nav-container {
-        padding: 2px 2px 10px 5px;
-        height: 70px;
+        height: 65px;
+    }
+
+    .nav-wrapper {
+        height: 65px;
+        padding: 10px 25px 10px 35px;
     }
 
     .logo-name {
@@ -525,8 +533,11 @@ a:hover .project2-name {
 @media screen and (max-width: 1000px) {
 
     .nav-container {
-        padding: 2px 2px 10px 5px;
-        height: 70px;
+        height: 65px;
+    }
+
+     .nav-wrapper {
+        height: 65px;
     }
 
     .project-one-container {
@@ -576,9 +587,18 @@ a:hover .project2-name {
         display: none;
     }
 
-    .nav-container {
-        padding: 2px 2px 10px 5px;
-        height: 70px;
+     .nav-container {
+        height: 60px;
+    }
+ 
+    .nav-wrapper {
+        padding: 10px 10px 10px 25px;
+        height: 60px;
+    }
+
+    /* mobile menu top matches nav height at this breakpoint */
+    .mobile-menu {
+        top: 60px;
     }
 
     .project-one-container {
@@ -619,9 +639,22 @@ a:hover .project2-name {
 @media screen and (max-width: 600px) {
 
     
+    body {
+        padding-top: 80px;
+    }
+ 
     .nav-container {
-        padding: 0px 0px 5px 0px;
-        height: 60px;
+        height: 55px;
+    }
+ 
+    .nav-wrapper {
+        padding: 10px 10px 10px 20px;
+        height: 55px;
+    }
+ 
+    /* mobile menu top updated to match nav height */
+    .mobile-menu {
+        top: 55px;
     }
 
     .logo-name {
@@ -661,7 +694,7 @@ a:hover .project2-name {
     .project2-container {
         flex-direction: column-reverse;
         align-items: center;
-        padding: 10px 20px 5px 20px;
+        padding: 0px 20px 5px 20px;
         margin-top: -100px;
         gap: 20px;
     }
@@ -695,13 +728,27 @@ a:hover .project2-name {
 
 @media screen and (max-width: 400px) {
     
+     body {
+        padding-top: 70px;
+    }
+ 
+
     .nav-container {
-        padding: 0px 0px 5px 0px;
-        height: 60px;
+        height: 50px;
+    }
+
+     .nav-wrapper {
+        padding: 10px 5px 10px 15px;
+        height: 50px;
+    }
+
+     /* mobile menu top updated to match nav height */
+    .mobile-menu {
+        top: 50px;
     }
 
     .logo-name {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .intro-container {
