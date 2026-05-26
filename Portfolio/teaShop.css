@@ -1,3 +1,7 @@
+/* ============================================
+   BASE STYLES & RESET
+   ============================================ */
+
 html {
     box-sizing: border-box;
 }
@@ -15,6 +19,10 @@ body{
     padding-top: 100px;
 }
 
+/* ============================================
+   WRAPPER
+   ============================================ */
+
 .wrapper{
     display: flex;
     width: 100%;
@@ -24,33 +32,40 @@ body{
     flex-direction: column;
 }
 
-.nav-wrapper {
-    display: flex;
-    width: 100%;
-    max-width: 1440px;
-    height: auto;
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    
-}
+/* ============================================
+   NAVIGATION
+   ============================================ */
 
 .nav-container {
     display: flex;
     height: 65px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px 10px 40px;
     position: fixed;
     top: 0;
-    left: 0; 
+    left: 0;
     right: 0;
-    background: #ECF3F4;       
+    background: #ECF3F4;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 100;
+    justify-content: center;
+    overflow: visible;
 }
-
-.logo-name{
+ 
+/* FIX 1: nav-wrapper strictly constrained to 1440px,
+   padding kept inside so buttons never push beyond the max */
+.nav-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    height: 65px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 10px 40px;
+    /* overflow hidden prevents any child from breaking out */
+    overflow: visible;
+}
+ 
+.logo-name {
     font-family: "Herr Von Muellerhoff", "Moon Dance", serif;
     font-size: 32px;
     letter-spacing: 2px;
@@ -58,18 +73,26 @@ body{
     font-weight: 500;
     line-height: normal;
     margin: 0;
+    /* prevents logo from shrinking and pushing buttons out */
+    flex-shrink: 0;
 }
-
+ 
 .logo-noDeco {
-text-decoration: none;
-color: inherit; /* inherits color from parent element */
+    text-decoration: none;
+    color: inherit;
 }
 
-.menu-container{
-    display: flex;
+.logo-noDeco:hover {
+ transform: scale(1.003);   /* grows */ 
+  text-shadow: 2px 2px 8px rgba(46, 73, 88, 0.4); /* soft shadow */ 
+}
+ 
+/*  hamburger hidden on large screens by default */
+.menu-container {
+    display: none;
     align-items: center;
 }
-
+ 
 .menu-button {
     background: none;
     border: none;
@@ -79,11 +102,188 @@ color: inherit; /* inherits color from parent element */
     align-items: center;
     justify-content: center;
 }
-
+ 
 .menu-button svg {
     width: 36px;
     height: 36px;
 }
+
+.menu-button svg:hover {
+ transform: scale(1.05);
+}
+
+
+/* ============================================
+   DESKTOP DROPDOWN
+   ============================================ */
+
+/* nav links container - visible on large screens */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight:600;
+    white-space: nowrap;
+    padding: 4px 0;
+}
+
+.nav-link:hover {
+  transform: scale(1.003);   /* grows */ 
+  text-shadow: 3px 3px 9px rgba(46, 73, 88, 0.4); /* soft shadow */
+}
+
+/* active state for current page */
+.nav-link.active {
+    font-weight: 700;
+    border-bottom: 2px solid #4a4a4b;
+}
+
+/* dropdown wrapper */
+.dropdown {
+    position: relative;
+}
+
+/* hidden by default */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ECF3F4;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 200;
+}
+
+/* show on hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.dropdown-item.disabled {
+    text-decoration:none;
+    color: #919192;
+    font-family: Raleway, sans-serif;
+    font-size: 15px;
+    padding: 10px 20px;
+    white-space: nowrap;
+    pointer-events: none; /* makes disabled item unclickable */
+}
+
+.dropdown-item:hover {
+  background: rgba(0,0,0,0.05);
+  font-weight: 600;
+}
+
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobile-menu {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    position: fixed;
+    top: 65px; /* matches default nav height */
+    left: 0;
+    right: 0;
+    background: #ECF3F4;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 101;  /* must be above nav-container */
+    padding: 10px 0;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-link {
+    text-decoration: none;
+    color: #000;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+
+.mobile-link.disabled {
+    text-decoration: none;
+    color: #919192;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    pointer-events: none;
+}
+
+.mobile-link:hover {
+  background: rgba(0,0,0,0.05);
+  font-weight: 600;
+}
+
+/* mobile dropdown */
+.mobile-dropdown-toggle {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: Raleway, sans-serif;
+    font-size: 17px;
+    padding: 14px 30px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-dropdown-toggle::after {
+    content: "▾"; /* down arrow indicator */
+}
+
+.mobile-dropdown-toggle:hover{
+  font-weight: 600;
+}
+
+.mobile-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.03);
+}
+
+.mobile-dropdown-menu.open {
+    display: flex;
+}
+
+.mobile-dropdown-menu .mobile-link {
+    padding-left: 50px; /* indented under parent */
+    font-size: 16px;
+}
+
+
+/* ============================================
+   NAV BUTTONS / STICKY LINKS
+   ============================================ */
 
 .sticky-link-box {
     position: sticky; 
@@ -91,25 +291,44 @@ color: inherit; /* inherits color from parent element */
     background:  #ECF3F4; 
     text-align:right; 
     z-index: 100;
-    margin-inline-start: auto; 
+    margin-inline-start: auto;
+    padding-right: 4%; 
 }
 
 .sticky-link {
-    background: #4967c3; 
+    background: #9e6e06; 
     color:  #ECF3F4; 
-    padding: 0px 5px; 
+    padding: 4px 8px; 
     text-decoration: none; 
     border-radius: 5px;
     margin-right: 10px;
+    font-size: 14px;
+    white-space: nowrap; /* prevents button text wrapping */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* shadow */
+}
+
+.sticky-link:hover {
+ box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* shadow */
 }
 
 .sticky-link-for-code {
-    background: #487aa3; 
+    background: #767f86; 
     color:  #ECF3F4; 
-    padding: 0px 5px; 
+    padding: 4px 8px; 
     text-decoration: none; 
     border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* shadow */
 }
+
+.sticky-link-for-code:hover {
+ box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* shadow */
+}
+
+/* ============================================
+   REFERENCES SECTION
+   ============================================ */
 
 .references-one-box {
     display: flex;
@@ -120,8 +339,6 @@ color: inherit; /* inherits color from parent element */
     padding: 30px 40px 30px 0px;
     align-items:self-start;
     align-self: stretch;
-    min-width: fit-content;
-    flex-shrink: 0;
 }
 
 .references-one {
@@ -136,6 +353,10 @@ color: inherit; /* inherits color from parent element */
     padding: 5px 2px;
 }
 
+/* ============================================
+   CHAPTERS SECTION
+   ============================================ */
+
 .intro-container{
     display: flex;
     flex-direction: column;
@@ -145,8 +366,6 @@ color: inherit; /* inherits color from parent element */
     padding: 30px 80px 0 80px;
     align-items: center;
     align-self: stretch;
-    min-width: fit-content;
-    flex-shrink: 0;
 }
 
 .main-header{
@@ -156,9 +375,9 @@ color: inherit; /* inherits color from parent element */
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    align-self: stretch;
     margin: 0 0 60px 0;
     align-self: center;
+    text-align: center;
 }
 
 .sub-header{
@@ -170,7 +389,7 @@ color: inherit; /* inherits color from parent element */
     line-height: 150%;
     align-self: stretch;
     margin: 0 0 30px 0;
-    align-self: center;
+    text-align: center;
 }
 
 .description-container {
@@ -180,8 +399,6 @@ color: inherit; /* inherits color from parent element */
     align-items: center;
     gap: 10px;
     align-self: stretch;
-    min-width: fit-content;
-    flex-shrink: 0;
 }
 
 .description{
@@ -204,6 +421,7 @@ color: inherit; /* inherits color from parent element */
     line-height: 150%;
     flex: 1 0 0;
     margin: 0;
+    margin-bottom: 30px;
     align-self: flex-start;
     padding-left: 20px;
 }
@@ -242,6 +460,10 @@ ul {
     
 }
 
+/* ============================================
+   TABLE IMAGE SECTION
+   ============================================ */
+
 .table-container {
     display: flex;
     flex-direction: column;
@@ -269,91 +491,11 @@ ul {
     padding-bottom: 50px; 
 }
 
-.wireframes-container {
-  display: flex;
-  justify-content: space-between; /* Evenly spaced */
-  gap: 20px; /* Space between photos */
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5px;
-}
+/* ============================================
+   MEDIA QUERIES - TABLET (max 1199px)
+   ============================================ */
 
-.wireframe {
-  flex: 1; /* Each item takes equal space */
-  max-width: calc(33.333% - 14px); /* Accounts for gap */
-}
-
-.screenshot{
-   flex: 1; /* Each item takes equal space */
-  max-width: calc(33.333% - 14px); /* Accounts for gap */  
-}
-
-.wireframe-tool {
-  flex: 1; /* Each takes equal space */
-  max-width: calc(25% - 15px); /* 4 items = 25% each, minus gap */
-}
-
-.screenshot4{
-  flex: 1; /* Each takes equal space */
-  max-width: calc(25% - 15px); /* 4 items = 25% each, minus gap */
-}
-
-.wireframe img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px; /* Optional: rounded corners */
-}
-
-.wireframes-tools{
-  display: flex;
-  justify-content: space-between; /* Evenly spaced */
-  gap: 20px; /* Space between photos */
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5px;
-}
-
-.container-twoIMG {
-  display: flex;
-  justify-content: space-between; /* Evenly spaced */
-  gap: 20px; /* Space between photos */
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5px;
-}
-
- .twoIMG {
-  flex: 1; /* Each item takes equal space */
-  max-width: calc(50% - 10px); /* Accounts for gap */
-}
-
-.chapter5-container{
-    padding-top: 60px;
-}
-
-.chapter5-image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    align-self: stretch;
-    padding: 5px 0;
-    width: 100%;
-}
-
-.chapter-5-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;  
-}
-
-
-
-/* Tablet Styles - 768px to 1024px */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1199px) {
 
     .logo-name {
         font-size: 36px;
@@ -361,243 +503,326 @@ ul {
 
     .intro-container {
         padding: 30px 40px 0 40px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .main-header {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .sub-header {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .description {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 13px;
+        padding: 3px 6px;
+    }
+
+    .table {
+        max-width: 95%;
+    }
+
+     .table-multiple {
+        max-width: 95%;
     }
  
    
 }
 
-/* Mobile Landscape - 600px to 768px */
-@media screen and (max-width: 768px) {
-   .nav-container {
-        padding: 10px 30px;
+
+/* ============================================
+   MEDIA QUERIES - TABLET (max 1000px)
+   ============================================ */
+
+@media screen and (max-width: 1000px) {
+
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 12px;
+        padding: 2px 5px;
+    }
+
+.table {
+        max-width: 80%;
+    }
+
+     .table-multiple {
+        max-width: 80%;
+    }
+
+}
+
+/* ============================================
+   MEDIA QUERIES - TABLET/MOBILE (max 900px)
+   hamburger appears, nav links hide
+   ============================================ */
+
+@media screen and (max-width: 900px) {
+
+     /* show hamburger */
+    .menu-container {
+        display: flex;
+    }
+
+    /* hide nav links */
+    .nav-links {
+        display: none;
+    }
+
+    .nav-container {
         height: 60px;
     }
 
+    .nav-wrapper {
+        padding: 10px 10px 10px 25px;
+        height: 60px;
+    }
+
+    .mobile-menu {
+        top: 60px; /* matches nav height at this breakpoint */
+    }
+
     .logo-name {
-        font-size: 30px;
-        max-width: 200px;
+        font-size: 28px;
     }
 
-    .menu-button svg {
-        width: 28px;
-        height: 28px;
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 11px;
+        padding: 2px 4px;
     }
 
-    .intro-container {
+     .intro-container {
         padding: 20px 30px 0 30px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         margin-top: 20px;
     }
-
+ 
     .main-header {
-        font-size: 32px;
-    }
-
-    .sub-header {
-        font-size: 24px;
-    }
-
-    .description {
-        font-size: 20px;
-    }
-
-    .table-container {
-        padding: 20px 0;
-    }
-
-    .wireframes-container {
-    flex-direction: column;
-}
-
-.wireframe{
-     max-width: 100%;
-}
-
-.screenshot{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
-
-  .wireframes-tools {
-    flex-direction: column;
-}
-
-.wireframe-tool{
-     max-width: 100%;
-}
-
-.screenshot4{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
-
-.link-deco{
-  font-size: 14px; /* or whatever size you need */
-  color: your-colour;
-  text-decoration: none; /* removes underline if you want */
-}
-
-
-}
-
-/* Mobile Portrait - below 600px */
-@media screen and (max-width: 600px) {
-
-    .sticky-link {
-    background: #7e93a4; 
-    color:  #ECF3F4; 
-    padding: 0px 5px; 
-    text-decoration: none; 
-    border-radius: 5px;
-}
-
-.hide-on-mobile {
-      display: none;  /* Hides the text */
-    }
-
-    .nav-container {
-        padding: 10px 20px;
-        height: 60px;
-    }
-
-    .logo-name {
-        font-size: 28px;
-        max-width: 180px;
-    }
-
-    .menu-button svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .intro-container {
-        padding: 15px 20px 0 20px;
-        margin-bottom: 20px;
-        margin-top: 15px;
-    }
-
-    .main-header {
-        font-size: 28px;
-        line-height: 140%;
-    }
-
-    .sub-header {
-        font-size: 20px;
-        line-height: 140%;
-    }
-
-    .description {
-        font-size: 18px;
-        line-height: 140%;
-    }
-
-    .description-container {
-        padding-bottom: 20px;
-    }
-
-    .table-container {
-        padding: 15px 0;
-    }
-
-     .wireframes-container {
-    flex-direction: column;
-}
-
-.wireframe{
-     max-width: 100%;
-}
-
-.screenshot{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
-
-  .wireframes-tools {
-    flex-direction: column;
-}
-
-.wireframe-tool{
-     max-width: 100%;
-}
-
-.screenshot4{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
-
-}
-
-/* Extra Small Mobile - below 400px */
-@media screen and (max-width: 400px) {
-    .nav-container {
-        padding: 10px 15px;
-        height: 50px;
-    }
-
-    .logo-name {
         font-size: 26px;
     }
-
-    .intro-container {
-        padding: 12px 15px 0 15px;
-        margin-bottom: 20px;
-    }
-
-    .main-header {
-        font-size: 24px;
-    }
-
+ 
     .sub-header {
+        font-size: 20px;
+    }
+ 
+    .description {
         font-size: 18px;
     }
 
+ .table {
+        max-width: 80%;
+    }
+
+     .table-multiple {
+        max-width: 80%;
+    }
+
+}
+
+/* ============================================
+   MEDIA QUERIES - TABLET/MOBILE (max 700px)
+   hamburger appears, nav links hide
+   ============================================ */
+
+@media screen and (max-width: 700px) {
+
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 10px;
+        padding: 1px 3px;
+    }
+ 
+    .intro-container {
+        padding: 15px 25px 0 25px;
+    }
+ 
+    .main-header {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+ 
+    .sub-header {
+        font-size: 19px;
+    }
+ 
     .description {
+        font-size: 17px;
+    }
+
+ .center-list {
         font-size: 16px;
     }
 
-  .wireframes-container {
-    flex-direction: column;
+    .ul-description {
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 30px;
+    }
+
+    .table {
+        max-width: 95%;
+    }
+
+     .table-multiple {
+        max-width: 95%;
+    }
+
 }
 
-.wireframe{
-     max-width: 100%;
+
+/* ============================================
+   MEDIA QUERIES - MOBILE (max 600px)
+   ============================================ */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding-top: 80px;
+    }
+ 
+    /* hides sticky link text on mobile, leaves icons only */
+    .hide-on-mobile {
+        display: none;
+    }
+ 
+    .nav-container {
+        height: 55px;
+    }
+ 
+    .nav-wrapper {
+        padding: 10px 10px 10px 20px;
+        height: 55px;
+    }
+ 
+    .mobile-menu {
+        top: 55px;
+    }
+ 
+    .logo-name {
+        font-size: 26px;
+        max-width: 180px;
+    }
+ 
+    .menu-button svg {
+        width: 26px;
+        height: 26px;
+    }
+ 
+    .intro-container {
+        padding: 15px 20px 0 20px;
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+ 
+    .main-header {
+        font-size: 22px;
+        line-height: 140%;
+        margin-bottom: 30px;
+    }
+ 
+    .sub-header {
+        font-size: 18px;
+        line-height: 140%;
+    }
+ 
+    .description {
+        font-size: 16px;
+        line-height: 140%;
+    }
+ 
+    .ul-description {
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 30px;
+    }
+ 
+    .center-list {
+        font-size: 16px;
+    }
+ 
+    .description-container {
+        padding-bottom: 5px;
+    }
+ 
+    .table-container {
+        padding: 15px 0;
+    }
+ 
+    .table,
+    .table-multiple {
+        max-width: 100%;
+    }
+ 
+
 }
 
-.screenshot{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
+/* ============================================
+   MEDIA QUERIES - EXTRA SMALL MOBILE (max 400px)
+   ============================================ */
 
-  .wireframes-tools {
-    flex-direction: column;
-}
+@media screen and (max-width: 400px) {
 
-.wireframe-tool{
-     max-width: 100%;
-}
-
-.screenshot4{
-     max-width: 100%;
-     margin-left: 80px;
-     margin-right: 80px;
-}
+     body {
+        padding-top: 70px;
+    }
+ 
+    .nav-container {
+        height: 50px;
+    }
+ 
+    .nav-wrapper {
+        padding: 10px 5px 10px 15px;
+        height: 50px;
+    }
+ 
+    .mobile-menu {
+        top: 50px;
+    }
+ 
+    .logo-name {
+        font-size: 22px;
+    }
+ 
+    .menu-button svg {
+        width: 22px;
+        height: 22px;
+    }
+ 
+    .intro-container {
+        padding: 12px 15px 0 15px;
+        margin-bottom: 10px;
+    }
+ 
+    .main-header {
+        font-size: 20px;
+    }
+ 
+    .sub-header {
+        font-size: 17px;
+    }
+ 
+    .description {
+        font-size: 15px;
+    }
+ 
+    .ul-description {
+        font-size: 15px;
+    }
+ 
+    .center-list {
+        font-size: 14px;
+        font-weight: 400;
+    }
+ 
+    .references-one {
+        font-size: 10px;
+    }
 
 }

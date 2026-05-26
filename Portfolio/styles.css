@@ -40,7 +40,7 @@ body {
     display: flex;
     width: 100%;
     max-width: 1440px;
-    height: 70px;
+    height: 65px;
     margin: auto;
     justify-content: space-between;
     align-items: center;
@@ -69,10 +69,13 @@ body {
     font-weight: 500;
     line-height: normal;
     margin: 0;
+     /* prevents logo from shrinking and pushing buttons out */
+    flex-shrink: 0;
 }
 
+/* hamburger hidden on large screens */
 .menu-container {
-    display: flex;
+    display: none;
     align-items: center;
 }
 
@@ -80,7 +83,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,11 +94,10 @@ body {
     height: 36px;
 }
 
-/* hamburger hidden on large screens */
-.menu-container {
-    display: none;
-    align-items: center;
+.menu-button svg:hover {
+ transform: scale(1.05);
 }
+
 
 /* ============================================
    DESKTOP DROPDOWN
@@ -121,6 +123,12 @@ body {
 .nav-link:hover {
   transform: scale(1.003);   /* grows */ 
   text-shadow: 3px 3px 9px rgba(46, 73, 88, 0.4); /* soft shadow */ 
+}
+
+/* active state for current page */
+.nav-link.active {
+    font-weight: 700;
+    border-bottom: 2px solid #4a4a4b;
 }
 
 /* dropdown wrapper */
@@ -175,7 +183,7 @@ body {
     right: 0;
     background: #ECF3F4;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 99;
+    z-index: 101;
     padding: 10px 0;
 }
 
@@ -194,6 +202,7 @@ body {
 
 .mobile-link:hover {
     background: rgba(0,0,0,0.04);
+    font-weight: 600;
 }
 
 /* mobile dropdown */
@@ -214,6 +223,10 @@ body {
 
 .mobile-dropdown-toggle::after {
     content: "▾"; /* down arrow indicator */
+}
+
+.mobile-dropdown-toggle:hover{
+  font-weight: 600;
 }
 
 .mobile-dropdown-menu {
@@ -649,7 +662,7 @@ a:hover .project2-name {
         flex-direction: column-reverse;
         align-items: center;
         padding: 10px 20px 5px 20px;
-        margin-top: -140px;
+        margin-top: -100px;
         gap: 20px;
     }
 
@@ -702,14 +715,6 @@ a:hover .project2-name {
     .secondary-intro {
         font-size: 16px;
     }
-
-    /*
-    .project-one-container,
-    .project2-container {
-        padding: 30px 15px;
-        gap: 25px;
-    }
-*/
 
      .project-one-container {
         flex-direction: column;

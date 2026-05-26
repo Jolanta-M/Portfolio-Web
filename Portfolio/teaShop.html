@@ -18,34 +18,88 @@
     <div class="wrapper">
 
 <!--Nav Bar-->
-        <div class="nav-container">
+        <nav class="nav-container">
           <div class="nav-wrapper">
             <div class="logo">
                 <p class="logo-name"><a href="index.html" class="logo-noDeco">Jolanta Miskelovic</a></p>
             </div>
+
             <div class="sticky-link-box">
- <a href="https://1drv.ms/b/c/3724088a35545ef3/IQBCBo8Xb8Q-Saaf8905IirNAVv_jnlqK55LJeqJxP5Gucc?e=5dQSeC"
+ <a href="https://www.figma.com/proto/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=1468-13194&t=Y8ndOdgIYoS25dpz-1&scaling=scale-down&content-scaling=fixed&page-id=641%3A2877&starting-point-node-id=1468%3A13194&show-proto-sidebar=1"
   target="_blank"
   class="sticky-link"
-  title="View Full FYP Report">📄<span class="hide-on-mobile">View Full FYP Report</span></a>
+  title="View Full FYP Report">📄<span class="hide-on-mobile">View Hi-Fi Prototype</span></a>
 
-<a href="https://github.com/Jolanta-M/DecisionApp"
+<a href="https://www.figma.com/design/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=641-2877&t=fI8VWA4k1D0X4tJX-1"
   target="_blank"
   class="sticky-link-for-code"
-  title="Access Code on GitHub">📄<span class="hide-on-mobile">Access Code on GitHub</span></a>
-
+  title="Access Code on GitHub">📄<span class="hide-on-mobile">View Hi-Fi Figma file</span></a>
 </div>
+
+<!-- Desktop nav links -->
+    <div class="nav-links">
+
+    <!-- Regular link -->
+      <a href="index.html" class="nav-link">Home</a>
+
+      <!-- Link WITH dropdown -->
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Projects</a>
+        <div class="dropdown-menu">
+          <a href="decideApp.html" class="dropdown-item">DecideApp</a>
+          <a href="#" class="dropdown-item disabled">TeaShop</a>
+        </div>
+      </div>
+
+       <!-- Link WITH dropdown -->
+      <div class="dropdown">
+        <a href="#" class="nav-link dropdown-toggle">Contact Me</a>
+        <div class="dropdown-menu">
+          <a href="https://www.linkedin.com/in/jolanta-m" target="_blank" class="dropdown-item">LinkedIn</a>
+          <a href="mailto:miskelovicjolanta@gmail.com" class="dropdown-item">Email Me</a>
+        </div>
+      </div>
+
+    </div>
+
+
             <div class="menu-container">
-                <button class="menu-button">
+                <button class="menu-button" onclick="toggleMenu()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 56 56" fill="none">
                 <path d="M9.33325 40.2965V37.9631H46.6666V40.2965H9.33325ZM9.33325 29.1665V26.8331H46.6666V29.1665H9.33325ZM9.33325 18.0365V15.7031H46.6666V18.0365H9.33325Z" fill="black"/>
                 </svg>
                 </button>
             </div>
+
             </div>
-        </div>
+          </nav>
 <!--End of Nav Bar-->
   
+<!-- Mobile menu dropdown -->
+<div class="mobile-menu" id="mobileMenu">
+   <a href="index.html" class="mobile-link">Home</a>
+  <!-- Mobile dropdown -->
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+      Projects
+    </button>
+    <div class="mobile-dropdown-menu">
+      <a href="decideApp.html" class="mobile-link">DecideApp</a>
+      <a href="#" class="mobile-link disabled">TeaShop</a>
+    </div>
+  </div>
+
+  <div class="mobile-dropdown">
+    <button class="mobile-dropdown-toggle" onclick="toggleMobileDropdown(this)">
+      Contact Me
+    </button>
+    <div class="mobile-dropdown-menu">
+      <a href="https://www.linkedin.com/in/jolanta-m" target="_blank" class="mobile-link">LikedIn</a>
+      <a href="mailto:miskelovicjolanta@gmail.com" class="mobile-link">Email Me</a>
+    </div>
+  </div>
+
+</div>
  
 
 <!--Chapter one-->
@@ -92,11 +146,20 @@
     </p>
 </div>
 <ul class="ul-description">
-      <li>Exploring UX research and creating simple user flows for the Tea Shop website (include link)</li>
-      <li>Creating the site map for the online Tea Shop based on the user flows (include link)</li>
-      <li>Creating and prototyping low fidelity wireframes (include link)</li>
-      <li>Selecting the colour palette and typography (include link)</li>
-      <li>Creating and prototyping high-fidelity wireframes (include link)</li>
+      <li>Exploring UX research and creating simple user flows for the Tea Shop website</li>
+      <li>Creating the site map for the online Tea Shop based on the user flows&nbsp;
+        <a href="https://www.figma.com/design/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=498-6590&t=fI8VWA4k1D0X4tJX-1"
+target="_blank"><small><em>Link to User Flows & Site Map in Figma</em></small></a>
+      </li>
+      <li>Creating and prototyping low fidelity wireframes&nbsp; <a href="https://www.figma.com/proto/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=498-6721&t=OczMNhl0mtDgLwkY-1&scaling=contain&content-scaling=fixed&page-id=498%3A6590&starting-point-node-id=498%3A6721&show-proto-sidebar=1"
+target="_blank"><small><em>Link to Initial Low-fidelity Prototype in Figma</em></small></a></li>
+      <li>Selecting the colour palette and typography&nbsp; <a href="https://www.figma.com/design/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=641-2877&t=fI8VWA4k1D0X4tJX-1"
+target="_blank"><small><em>Link to Colour Palette & Typography files in Figma</em></small></a>
+</li>
+      <li>Creating and prototyping high-fidelity wireframes&nbsp; <a href="https://www.figma.com/proto/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=1468-13194&t=Y8ndOdgIYoS25dpz-1&scaling=scale-down&content-scaling=fixed&page-id=641%3A2877&starting-point-node-id=1468%3A13194&show-proto-sidebar=1"
+target="_blank"><small><em>Link to High-fidelity Prototype in Figma</em></small></a>
+
+      </li>
       </ul>
 </div>
 <!--End of Chapter two-->
@@ -426,13 +489,23 @@
 <div class="intro-container">
 <h2 class="sub-header">Project Foundations </h2>
 
+<!--User Flow & Site Map-->
+<div class="description-container">
+ <div class="center-list">
+
+ <p class="text-bold">1. Tea Shop’s Initial User Flows & Site Map  </p> 
+<a href="https://www.figma.com/design/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=498-6590&t=fI8VWA4k1D0X4tJX-1"
+target="_blank"><small><em>Link to access User Flows & Site Map in Figma</em></small></a>
+   
+ </div>
+</div>
+<!--End of User Flow & Site Map-->
+
 <!--Color Palette-->
 <div class="description-container">
  <div class="center-list">
 
- <p class="text-bold">1. Colour Palette : &nbsp; &nbsp; &nbsp;
-<a href="https://1drv.ms/b/c/3724088a35545ef3/IQBdNjY2au4MSr29vsMQu6B4Af3NlSaQ55Pcy1VZbmwXuFU?e=TNns9p"
-target="_blank"><small><em>Link to access Colour Palette file in Figma</em></small></a>  </p>
+ <p class="text-bold">2. Colour Palette: </p>
    
 <div class="table-container">
     <img src="images/Color Scheme for TeaShop (Split-Complementary)-2.png" alt="​image of Tea Shop website page" class="table-multiple"> 
@@ -445,9 +518,7 @@ target="_blank"><small><em>Link to access Colour Palette file in Figma</em></sma
 <div class="description-container">
  <div class="center-list">
 
- <p class="text-bold">1. Typography : &nbsp; &nbsp; &nbsp; &nbsp; 
-<a href="https://1drv.ms/b/c/3724088a35545ef3/IQBdNjY2au4MSr29vsMQu6B4Af3NlSaQ55Pcy1VZbmwXuFU?e=TNns9p"
-target="_blank"><small><em>Link to access Typography file in Figma</em></small></a>  </p>
+ <p class="text-bold">3. Typography:</p>
    
 <div class="table-container">
     <img src="images/Font Families for TeaShop.png" alt="​image of Tea Shop website page" class="table-multiple"> 
@@ -456,17 +527,30 @@ target="_blank"><small><em>Link to access Typography file in Figma</em></small><
 </div>
 <!--End of Typography-->
 
-<!--User Flow-->
+<!--Low-fidelity Prototype-->
 <div class="description-container">
  <div class="center-list">
 
- <p class="text-bold">3. Tea Shop’s Initial User Flows + Site Map  </p> 
-<a href="https://1drv.ms/b/c/3724088a35545ef3/IQBdNjY2au4MSr29vsMQu6B4Af3NlSaQ55Pcy1VZbmwXuFU?e=TNns9p"
-target="_blank"><small><em>Link to access Typography file in Figma</em></small></a>
+ <p class="text-bold">4. Initial Low-fidelity Prototype of Tea Shop website  </p> 
+<a href="https://www.figma.com/proto/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=498-6721&t=OczMNhl0mtDgLwkY-1&scaling=contain&content-scaling=fixed&page-id=498%3A6590&starting-point-node-id=498%3A6721&show-proto-sidebar=1"
+target="_blank"><small><em>Link to Initial Low-fidelity Prototype in Figma</em></small></a>
    
  </div>
 </div>
-<!--End of User Flow-->
+<!--End of Low-fidelity Prototype-->
+
+<!--High-fidelity Prototype-->
+<div class="description-container">
+ <div class="center-list">
+
+ <p class="text-bold">5. High-fidelity Prototype of Tea Shop website  </p> 
+<a href="https://www.figma.com/proto/DlghzkoPfUyT0XekSZB80L/Desktop-Portfolio-Website?node-id=1468-13194&t=Y8ndOdgIYoS25dpz-1&scaling=scale-down&content-scaling=fixed&page-id=641%3A2877&starting-point-node-id=1468%3A13194&show-proto-sidebar=1"
+target="_blank"><small><em>Link to High-fidelity Prototype in Figma</em></small></a>
+   
+ </div>
+</div>
+<!--End of High-fidelity Prototype-->
+
 
 </div>
 <!--   End of Chapter Four -->
@@ -475,6 +559,28 @@ target="_blank"><small><em>Link to access Typography file in Figma</em></small><
     <!--End of Wrapper-->
 
     <!--Script-->
-   
+   <script>
+  // toggles mobile menu open/closed
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+
+  // toggles individual mobile dropdown open/closed
+  function toggleMobileDropdown(button) {
+    const dropdownMenu = button.nextElementSibling;
+    dropdownMenu.classList.toggle('open');
+  }
+
+  // closes mobile menu if user clicks outside it
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.menu-button');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
+
 </body>
 </html>

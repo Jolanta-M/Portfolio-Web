@@ -177,6 +177,7 @@ body {
     font-size: 15px;
     padding: 10px 20px;
     white-space: nowrap;
+    pointer-events: none;
 }
 
 .dropdown-item:hover {
@@ -222,6 +223,7 @@ body {
     font-size: 17px;
     padding: 14px 30px;
     border-bottom: 1px solid rgba(0,0,0,0.06);
+    pointer-events: none;
 }
 
 .mobile-link:hover {
@@ -286,7 +288,7 @@ body {
 .sticky-link {
     background: #42769e;
     color: #ECF3F4;
-    padding: 2px 8px;
+    padding: 4px 8px;
     text-decoration: none;
     border-radius: 5px;
     margin-right: 10px;
@@ -302,11 +304,11 @@ body {
 .sticky-link-for-code {
     background: #767f86;
     color: #ECF3F4;
-    padding: 2px 8px;
+    padding: 4px 8px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 14px;
     white-space: nowrap;
+    font-size: 14px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* shadow */
 }
 
@@ -580,8 +582,22 @@ body {
 
     .sticky-link,
     .sticky-link-for-code {
-        font-size: 12px;
-        padding: 2px 4px;
+        font-size: 13px;
+        padding: 3px 6px;
+    }
+
+    .wireframes-container,
+    .wireframes-tools,
+    .container-twoIMG {
+        max-width: 850px;
+    }
+
+    .wireframe,
+    .screenshot,
+    .wireframe-tool,
+    .screenshot4,
+    .twoIMG {
+        max-width: 100%;
     }
 
     
@@ -598,7 +614,12 @@ body {
     .sticky-link,
     .sticky-link-for-code {
         font-size: 12px;
-        padding: 1px 3px;
+        padding: 2px 5px;
+    }
+
+    .center-list {
+        font-size: 18px;
+        font-weight: 400;
     }
 }
 
@@ -632,16 +653,14 @@ body {
         top: 60px; /* matches nav height at this breakpoint */
     }
 
+    .sticky-link,
+    .sticky-link-for-code {
+        font-size: 11px;
+        padding: 2px 4px;
+    }
+
     .logo-name {
         font-size: 28px;
-    }
-
-    .sticky-link-for-code{
-        padding: 0px 4px;
-    }
-
-     .sticky-link{
-        padding: 0px 4px;
     }
 
     .intro-container {
@@ -660,6 +679,11 @@ body {
 
     .description {
         font-size: 18px;
+    }
+
+    .center-list {
+        font-size: 18px;
+        font-weight: 400;
     }
 
     .wireframes-container,
@@ -686,9 +710,29 @@ body {
 
     .sticky-link,
     .sticky-link-for-code {
-        font-size: 9px;
+        font-size: 10px;
         padding: 1px 3px;
     }
+
+ .center-list {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+     .wireframes-container,
+    .wireframes-tools,
+    .container-twoIMG {
+        max-width: 620px;
+    }
+
+    .wireframe,
+    .screenshot,
+    .wireframe-tool,
+    .screenshot4,
+    .twoIMG {
+        max-width: 100%;
+    }
+
 }
 
 
@@ -705,6 +749,11 @@ body {
     /* hides sticky link's text on mobile and leaves only small icons of them*/
     .hide-on-mobile {
         display: none;
+    }
+
+     .center-list {
+        font-size: 16px;
+        font-weight: 400;
     }
 
     .nav-container {
@@ -769,7 +818,7 @@ body {
     .wireframes-tools,
     .container-twoIMG {
         flex-direction: column;
-        max-width: 300px;
+        max-width: 230px;
     }
 
     .wireframe,
@@ -839,5 +888,22 @@ body {
 
     .references-one {
         font-size: 9px;
+    }
+
+
+    /* wireframes stack vertically on smaller screens */
+    .wireframes-container,
+    .wireframes-tools,
+    .container-twoIMG {
+        flex-direction: column;
+        max-width: 230px;
+    }
+
+    .wireframe,
+    .screenshot,
+    .wireframe-tool,
+    .screenshot4,
+    .twoIMG {
+        max-width: 100%;
     }
 }
