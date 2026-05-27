@@ -805,6 +805,16 @@ body {
         max-width: 100%;
     }
 
+    .wireframe img,
+    .screenshot img,
+    .wireframe-tool img,
+    .screenshot4 img,
+    .twoIMG img {
+        max-height: 100px; /* adjust to taste */
+        object-fit: contain;
+        object-position: top;
+    }
+
 /* wireframes stack vertically on smaller screens */
 .wireframes-container,
 .wireframes-tools,
@@ -822,6 +832,7 @@ body {
     .twoIMG {
         max-width: 100%;
     }
+
 
 }
 
@@ -882,6 +893,16 @@ body {
 
     .references-one {
         font-size: 9px;
+    }
+
+.wireframe img,
+    .screenshot img,
+    .wireframe-tool img,
+    .screenshot4 img,
+    .twoIMG img {
+        max-height: 100px; /* adjust to taste */
+        object-fit: contain;
+        object-position: top;
     }
 
 
