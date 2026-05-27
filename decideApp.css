@@ -816,7 +816,7 @@ body {
     .wireframe-tool,
     .screenshot4,
     .twoIMG {
-        max-width: 100%;
+        max-width: 85%;
     }
 
 }
@@ -894,6 +894,6 @@ body {
     .wireframe-tool,
     .screenshot4,
     .twoIMG {
-        max-width: 100%;
+        max-width: 85%;
     }
 }
