@@ -808,7 +808,7 @@ body {
     .wireframes-tools,
     .container-twoIMG {
         flex-direction: column;
-        max-width: 230px;
+        padding: 50px;
     }
 
     .wireframe,
@@ -816,7 +816,10 @@ body {
     .wireframe-tool,
     .screenshot4,
     .twoIMG {
-        max-width: 85%;
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     }
 
 }
@@ -886,7 +889,7 @@ body {
     .wireframes-tools,
     .container-twoIMG {
         flex-direction: column;
-        max-width: 230px;
+        padding: 50px;
     }
 
     .wireframe,
@@ -894,6 +897,9 @@ body {
     .wireframe-tool,
     .screenshot4,
     .twoIMG {
-        max-width: 85%;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     }
 }
