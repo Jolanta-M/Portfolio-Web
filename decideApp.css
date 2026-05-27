@@ -490,6 +490,8 @@ body {
     height: auto;
     display: block;
     border-radius: 8px;
+    object-fit: contain; /* prevents distortion */
+    max-width: 100%;
 }
 
 .wireframes-tools {
@@ -804,22 +806,21 @@ body {
     }
 
 /* wireframes stack vertically on smaller screens */
-    .wireframes-container,
-    .wireframes-tools,
-    .container-twoIMG {
-        flex-direction: column;
-        padding: 50px;
-    }
+.wireframes-container,
+.wireframes-tools,
+.container-twoIMG {
+    flex-direction: column;
+    padding: 5px 10px; /* small side padding only */
+    max-width: 100%;
+    width: 100%;
+}
 
     .wireframe,
     .screenshot,
     .wireframe-tool,
     .screenshot4,
     .twoIMG {
-    max-width: 60%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+        max-width: 100%;
     }
 
 }
@@ -885,21 +886,20 @@ body {
 
 
     /* wireframes stack vertically on smaller screens */
-    .wireframes-container,
-    .wireframes-tools,
-    .container-twoIMG {
-        flex-direction: column;
-        padding: 50px;
-    }
+  .wireframes-container,
+  .wireframes-tools,
+  .container-twoIMG {
+    flex-direction: column;
+    padding: 5px 8px;
+    max-width: 100%;
+    width: 100%;
+}
 
     .wireframe,
     .screenshot,
     .wireframe-tool,
     .screenshot4,
     .twoIMG {
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+        max-width: 100%;
     }
 }
