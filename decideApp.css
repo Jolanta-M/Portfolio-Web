@@ -489,8 +489,8 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
-    object-fit: contain; /* prevents distortion */
+    object-fit: cover; /* changed from contain to cover */
+    object-position: center;
     max-width: 100%;
 }
 
