@@ -410,7 +410,6 @@ a:hover .project2-name {
 .button-text {
     color: #000;
     font-family: Raleway, sans-serif;
-    transition: transform 0.3s ease, color 0.3s ease; 
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -513,7 +512,7 @@ a:hover .project2-name {
     }
 
     .project2-image {
-        max-width: 500px;
+        max-width: 600px;
     }
 }
 
