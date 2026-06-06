@@ -461,7 +461,7 @@ ul {
     align-items: center;
     gap: 5px;
     width: 100%;
-    max-width: 890px; /* adjust this number to whatever fits nicely */
+    max-width: 800px; /* adjust this number to whatever fits nicely */
     margin: 0 auto;
 }
 
