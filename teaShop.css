@@ -467,7 +467,7 @@ ul {
 
 .table {
     display: block;
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
     margin: 0 auto; 
@@ -475,11 +475,28 @@ ul {
 
 .table-multiple {
     display: block;
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
     margin: 0 auto;
     padding-bottom: 50px; 
+}
+
+
+/* ============================================
+   MEDIA QUERIES - DESKTOP ADJUSTMENTS
+   ============================================ */
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+   
+    .table {
+        max-width: 80%;
+    }
+
+     .table-multiple {
+        max-width: 80%;
+    }
+
 }
 
 
