@@ -517,14 +517,13 @@ ul {
     }
 
     .table {
-        max-width: 95%;
+        max-width: 68%;
     }
 
      .table-multiple {
-        max-width: 95%;
+        max-width: 68%;
     }
- 
-   
+
 }
 
 
@@ -541,11 +540,11 @@ ul {
     }
 
 .table {
-        max-width: 80%;
+        max-width: 65%;
     }
 
      .table-multiple {
-        max-width: 80%;
+        max-width: 65%;
     }
 
 }
@@ -609,11 +608,11 @@ ul {
     }
 
  .table {
-        max-width: 80%;
+        max-width: 65%;
     }
 
      .table-multiple {
-        max-width: 80%;
+        max-width: 65%;
     }
 
 }
@@ -659,11 +658,11 @@ ul {
     }
 
     .table {
-        max-width: 95%;
+        max-width: 75%;
     }
 
      .table-multiple {
-        max-width: 95%;
+        max-width: 75%;
     }
 
 }
@@ -749,7 +748,7 @@ ul {
  
     .table,
     .table-multiple {
-        max-width: 100%;
+        max-width: 80%;
     }
  
 
@@ -815,6 +814,11 @@ ul {
  
     .references-one {
         font-size: 10px;
+    }
+
+     .table,
+    .table-multiple {
+        max-width: 85%;
     }
 
 }

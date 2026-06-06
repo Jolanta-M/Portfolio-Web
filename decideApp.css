@@ -581,7 +581,7 @@ body {
     .wireframes-container,
     .wireframes-tools,
     .container-twoIMG {
-        max-width: 850px;
+        max-width: 70%;
     }
 
     .wireframe,
@@ -613,6 +613,21 @@ body {
         font-size: 18px;
         font-weight: 400;
     }
+
+.wireframes-container,
+    .wireframes-tools,
+    .container-twoIMG {
+        max-width: 620px;
+    }
+
+    .wireframe,
+    .screenshot,
+    .wireframe-tool,
+    .screenshot4,
+    .twoIMG {
+        max-width: 100%;
+    }
+
 }
 
 /* ============================================
@@ -821,8 +836,8 @@ body {
 .container-twoIMG {
     flex-direction: column;
     padding: 5px 10px; /* small side padding only */
-    max-width: 100%;
-    width: 100%;
+    max-width: 40%;
+    width: 40%;
 }
 
     .wireframe,
@@ -912,8 +927,8 @@ body {
   .container-twoIMG {
     flex-direction: column;
     padding: 5px 8px;
-    max-width: 100%;
-    width: 100%;
+    max-width: 55%;
+    width: 55%;
 }
 
     .wireframe,
